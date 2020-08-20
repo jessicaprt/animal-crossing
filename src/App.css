@@ -1,3 +1,46 @@
 .font--main {
   font-family: 'Dosis', sans-serif;
 }
+
+.font-color-dark {
+  color: #938979;
+}
+
+.font-color-light {
+  color: #dfd9c6
+}
+
+.padded-6y {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.padded-4y {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.padded-2y {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.padded-1y {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.padded-4x {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.padded-2x {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.padded-1x {
+  padding-left: 10px;
+  padding-right: 10px;
+}

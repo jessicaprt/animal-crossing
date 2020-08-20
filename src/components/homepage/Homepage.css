@@ -2,3 +2,37 @@
   min-height: 100vh;
   background-color: #f6f3e6;
 }
+
+.homepage-container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.homepage-time,
+.homepage-title {
+  width: 100%;
+  text-align: center;
+}
+
+.homepage-grid-wrapper {
+  margin: 0 auto;
+}
+
+.homepage-item-container {
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.homepage-item {
+  margin: 0 auto;
+  border-radius: 40px;
+}
+
+.homepage-item-image {
+  text-align: center;
+}
+
+.homepage-item-image img {
+  width: 90%;
+}
