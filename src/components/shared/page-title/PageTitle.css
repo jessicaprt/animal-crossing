@@ -1,0 +1,8 @@
+.page-title-breadcrumb,
+.page-title {
+  margin: 0;
+}
+
+.page-title-breadcrumb {
+  cursor: pointer;
+}

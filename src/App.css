@@ -1,3 +1,4 @@
+body,
 .font--main {
   font-family: 'Dosis', sans-serif;
 }
@@ -8,6 +9,14 @@
 
 .font-color-light {
   color: #dfd9c6
+}
+
+.background-main {
+  background-color: #f6f3e6;
+}
+
+.background-dark {
+  background-color: #938979;
 }
 
 .padded-6y {

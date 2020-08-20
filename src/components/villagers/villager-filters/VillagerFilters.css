@@ -1,0 +1,8 @@
+.villager-filters-search-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.villager-filters-search-icon {
+  padding-right: 10px;
+}

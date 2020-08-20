@@ -1,21 +1,11 @@
 import React from 'react';
-import './Homepage.css';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 
-export const HomepageIcon = ({imageUrl}) => {
-  return (
-    <Grid item spacing={2} xs={4}>  
-      <div className="homepage-item-container padded-1y">
-        <div className="homepage-item">
-          <div className="homepage-item-image">
-            <img src={`assets/homepage_icons/${imageUrl}`}/>
-          </div>
-        </div>
-      </div>
-    </Grid>
-  );
-}
+import './IHomepageItem';
+import './Homepage.css';
+import { IHomepageItem } from './IHomepageItem';
+import { HomepageIcon } from './homepage-icon/HomepageIcon';
 
 export class Homepage extends React.Component<{}, {time: string}> {
   
@@ -42,17 +32,47 @@ export class Homepage extends React.Component<{}, {time: string}> {
 
   render() {
     const time = new Date();
-    const icons = [
-      "villager_icon.png",
-      "music_icon.png",
-      "creature_icon.png",
-      "diy_icon.png",
-      "shopping_icon.png",
-      "art_icon.png"
+    const icons:IHomepageItem[] = [
+      {
+        id: 'homepage-icon--1',
+        name: "Villager",
+        imageUrl: "villager_icon.png",
+        link: '/villagers'
+      },
+      {
+        id: 'homepage-icon--2',
+        name: "Music",
+        imageUrl: "music_icon.png",
+        link: '/'
+      },
+      {
+        id: 'homepage-icon--3',
+        name: "Creature",
+        imageUrl: "creature_icon.png",
+        link: '/'
+      },
+      {
+        id: 'homepage-icon--4',
+        name: "DIY",
+        imageUrl: "diy_icon.png",
+        link: '/'
+      },
+      {
+        id: 'homepage-icon--5',
+        name: "Shopping",
+        imageUrl: "shopping_icon.png",
+        link: '/'
+      },
+      {
+        id: 'homepage-icon--6',
+        name: "Art",
+        imageUrl: "art_icon.png",
+        link: '/'
+      },
     ];
 
     return (
-      <div className="font--main homepage-wrapper padded-6y">
+      <div className="background-main font--main homepage-wrapper padded-6y">
         <div className="homepage-container">
           <Container>
             <h3 className="font-color-light homepage-time">{this.state.time}</h3>
@@ -60,7 +80,7 @@ export class Homepage extends React.Component<{}, {time: string}> {
 
             <div className="padded-6y homepage-grid-wrapper">
               <Grid container>
-                {icons.map((icon: string) => <HomepageIcon imageUrl={icon}/> )}
+                {icons.map((homepageItem: IHomepageItem) => <HomepageIcon key={homepageItem.id} homepageItem={homepageItem}/> )}
               </Grid>
             </div>
           </Container>

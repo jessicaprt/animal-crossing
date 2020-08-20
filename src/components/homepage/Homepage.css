@@ -1,6 +1,9 @@
+a {
+  text-decoration: none !important;
+}
+
 .homepage-wrapper {
   min-height: 100vh;
-  background-color: #f6f3e6;
 }
 
 .homepage-container {
@@ -24,9 +27,14 @@
   cursor: pointer;
 }
 
+.homepage-item-container:hover {
+  opacity: 0.8;
+}
+
 .homepage-item {
   margin: 0 auto;
   border-radius: 40px;
+  text-align: center;
 }
 
 .homepage-item-image {
