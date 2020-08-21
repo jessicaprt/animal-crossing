@@ -1,3 +1,7 @@
+.villagers-wrapper {
+  min-height: 100vh;
+}
+
 .villagers-container {
   background-color: #fff;
   width: 100%;
@@ -8,11 +12,47 @@
 
 .villager-filter-title {
   width: 100%;
+}
+
+.villager-filter-title h3 {
   text-align: right;
+}
+
+.vilalger-chip-list {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.villager-chip {
+  margin-right: 10px;
+  font-family: 'Dosis', sans-serif !important;
+  background-color: #bd7ce1 !important;
+  color: #fff !important;
 }
 
 .villager-modal-wrapper {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+}
+
+.villager-title-container {
+  position: relative;
+}
+
+.villager-search-wrapper {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 30px;
+  right: 0;
+}
+
+.villager-search-icon {
+  padding-right: 10px;
+}
+
+.MuiTextField-root {
+  background-color: #fff;
 }

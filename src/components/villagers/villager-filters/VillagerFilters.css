@@ -1,8 +1,27 @@
-.villager-filters-search-wrapper {
-  display: flex;
-  align-items: center;
+.filter-form-group {
+  max-height: 300px;
 }
 
-.villager-filters-search-icon {
-  padding-right: 10px;
+.MuiRadio-root {
+  padding: 2px !important;
+}
+
+.MuiFormControlLabel-label {
+  font-size: 13px !important;
+  font-family: 'Dosis', sans-serif !important;
+  padding-right: 50px;
+}
+
+.MuiFormLabel-root {
+  font-size: 14px !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  font-family: 'Dosis', sans-serif !important;
+}
+
+@media (max-width: 600px) { 
+  .filter-form-group {
+    max-width: 300px;
+    max-height: 530px;
+  }
 }

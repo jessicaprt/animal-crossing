@@ -6,3 +6,9 @@
 .page-title-breadcrumb {
   cursor: pointer;
 }
+
+a:visited {
+  color: #dfd9c6;
+  background-color: transparent;
+  text-decoration: none;
+}

@@ -56,9 +56,11 @@ export class VillagerDetails extends React.Component<{villager: IVillager, close
 
         <div className="padded-1y padded-2x">
           <table>
-           <VillagerSubDetail label="Gender" text={_villager.gender} />
-           <VillagerSubDetail label="Catchphrase" text={`"${_villager.catchphrase}"`}/>
-           <VillagerSubDetail label="Hobby" text={_villager.hobby} />
+            <tbody>
+              <VillagerSubDetail label="Gender" text={_villager.gender} />
+              <VillagerSubDetail label="Catchphrase" text={`"${_villager.catchphrase}"`}/>
+              <VillagerSubDetail label="Hobby" text={_villager.hobby} />
+            </tbody>
           </table>
         </div>
       </div>
