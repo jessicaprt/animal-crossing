@@ -8,6 +8,7 @@ import { Page } from './components/page/Page';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Villagers } from './components/villagers/Villagers';
 import { Music } from './components/music/Music';
+import { Creatures } from './components/creatures/Creatures';
 
 function App() {
   return (
@@ -36,6 +37,14 @@ function App() {
             render={() => (
               <div className="App">
                 <Music />
+              </div>
+          )}/>
+
+          <Route exact={true}
+            path='/creatures'
+            render={() => (
+              <div className="App">
+                <Creatures />
               </div>
           )}/>
 

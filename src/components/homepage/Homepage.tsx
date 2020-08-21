@@ -35,7 +35,7 @@ export class Homepage extends React.Component<{}, {time: string}> {
     const icons:IHomepageItem[] = [
       {
         id: 'homepage-icon--1',
-        name: "Villager",
+        name: "Villagers",
         imageUrl: "villager_icon.png",
         link: '/villagers'
       },
@@ -47,9 +47,9 @@ export class Homepage extends React.Component<{}, {time: string}> {
       },
       {
         id: 'homepage-icon--3',
-        name: "Creature",
+        name: "Creatures",
         imageUrl: "creature_icon.png",
-        link: '/'
+        link: '/creatures'
       },
       {
         id: 'homepage-icon--4',
