@@ -3,6 +3,10 @@ import React from 'react';
 export class Base extends React.Component<{}, {data: any}> {
   private _baseEndpoint = 'http://acnhapi.com/v1';
   
+  /**
+   * GET call
+   * @param request
+   */
   _get = async(request: string): Promise<any> => {
     const url = `${this._baseEndpoint}${request}`;
     
@@ -14,5 +18,17 @@ export class Base extends React.Component<{}, {data: any}> {
     }
 
     return body;
+  }
+
+  /**
+   * update state
+   * @param key 
+   * @param value 
+   */
+  _changeState(key: string, value: any) {
+    let currentState = this.state.data;
+    currentState[key] = value;
+
+    this.setState(currentState);
   }
 }

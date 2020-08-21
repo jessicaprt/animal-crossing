@@ -37,14 +37,6 @@ export class Music extends MusicManager {
     this._isMounted = false;
   }
 
-  /** update state */
-  changeState(key: string, newState: any) {
-    let _currentState = this.state.data;
-    _currentState[key] = newState;
-    this.setState(_currentState);
-  }
-  
-
   renderAllSongs(songs: any) {
     const _allSongs:IMusic[] = [];
 
@@ -60,8 +52,8 @@ export class Music extends MusicManager {
       _allSongs.push(_newSong);
     });
 
-    this.changeState('allSongs', _allSongs);
-    this.changeState('filteredSongs', _allSongs);
+    this._changeState('allSongs', _allSongs);
+    this._changeState('filteredSongs', _allSongs);
   }
 
   textSearch(searchString: string) {
@@ -77,7 +69,7 @@ export class Music extends MusicManager {
       song.name.toLowerCase().indexOf(_search) > -1
     );
 
-    this.changeState('filteredSongs', _filtered);
+    this._changeState('filteredSongs', _filtered);
     
     return _filtered;
   }

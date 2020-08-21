@@ -2,6 +2,7 @@ import React from 'react';
 
 import { IVillager } from '../IVillager';
 import { Grid, Chip } from '@material-ui/core';
+
 import CloseIcon from '@material-ui/icons/Close';
 
 import './VillagerDetails.css';
@@ -24,8 +25,8 @@ export class VillagerDetails extends React.Component<{villager: IVillager, close
     const _villager: IVillager = this.props.villager;
 
     return (
-      <div className="villager-details-container padded-4y padded-2x font-color-dark">
-        <div className="villager-detailsclose-button" onClick={this.props.closeAction}>
+      <div className="app-modal-container padded-4y padded-2x font-color-dark">
+        <div className="app-details-close-button" onClick={this.props.closeAction}>
           <CloseIcon/>
         </div>
         <div className="padded-2y">

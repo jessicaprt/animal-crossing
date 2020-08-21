@@ -1,0 +1,45 @@
+.fishes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.fish-item {
+  margin: 0 5px 25px 5px;
+  cursor: pointer;
+}
+
+.fish-item:hover {
+  opacity: 0.5;
+}
+
+.fish-item-image {
+  height: 150px;
+  border: 3px solid #ddd;
+  position: relative;
+  background-color: #eee;
+}
+
+.fish-item-image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.fish-item-name {
+  text-align: center;
+}
+
+.fish-item-image,
+.fish-item-name {
+  width: 150px;
+}
+
+.fish-modal-wrapper {
+  height: 100
+}
+
+.creature-accordion {
+  box-shadow: none !important;
+}

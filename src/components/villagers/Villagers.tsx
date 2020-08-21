@@ -115,8 +115,8 @@ export class Villagers extends VillagersManager {
    */
   openVillagerModal(currentVillager: IVillager) {
     const currentState = this.state.data;
-    this.changeState('modalOpen', true);
-    this.changeState('currentVillager', currentVillager);
+    this._changeState('modalOpen', true);
+    this._changeState('currentVillager', currentVillager);
   }
 
   /**
@@ -124,21 +124,7 @@ export class Villagers extends VillagersManager {
    */
   closeVillagerModal() {
     const currentState = this.state.data;
-    this.changeState('modalOpen', false);
-  }
-
-  /**
-   * update the state
-   * @param stateKey 
-   * @param newState 
-   */
-  changeState(stateKey: string, newState: any) {
-    let currentState = this.state.data;
-    currentState[stateKey] = newState;
-
-    this.setState({
-      data: currentState
-    });
+    this._changeState('modalOpen', false);
   }
 
   /**
@@ -252,7 +238,7 @@ export class Villagers extends VillagersManager {
    * @param searchString 
    */
   textSearchChange(searchString: string) {
-    this.changeState('textFilter', searchString);
+    this._changeState('textFilter', searchString);
     console.log('searching: ', this.state.data.textFilter);
     this.allSearch();
   }
@@ -262,7 +248,7 @@ export class Villagers extends VillagersManager {
    * @param filtersSelection
    */
   filterSelectionChange(filtersSelection: IVillageFiltersSelection) {
-    this.changeState('radioFilters', filtersSelection);
+    this._changeState('radioFilters', filtersSelection);
     this.allSearch();
   }
 
@@ -278,7 +264,7 @@ export class Villagers extends VillagersManager {
     // radio search
     _filtered = this.radioSearch(_filteredString);
 
-    this.changeState('filteredVillagers', _filtered);
+    this._changeState('filteredVillagers', _filtered);
   }
 
   render() {
@@ -326,7 +312,7 @@ export class Villagers extends VillagersManager {
             this.state.data.filteredVillagers ? 
             <div>
               <p className="font-color-light">Villagers: {this.state.data.filteredVillagers.length}</p>
-              <div className="villagers-container">
+              <div className="villagers-container main-section">
                 {this.state.data.filteredVillagers.map(
                   (villager: IVillager) => 
                     <div key={villager.id} onClick={() => {this.openVillagerModal(villager)}}>
@@ -340,7 +326,7 @@ export class Villagers extends VillagersManager {
           }
         </Container>
         <Modal open={_modalOpen} onClose={this.closeVillagerModal}>
-          <div className="villager-modal-wrapper">
+          <div className="app-modal-wrapper">
             <VillagerDetails villager={this.state.data.currentVillager} closeAction={this.closeVillagerModal}/>
           </div>
         </Modal>
