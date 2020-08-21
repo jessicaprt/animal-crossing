@@ -1,0 +1,19 @@
+.song-item-container {
+  margin-bottom: 5px;
+}
+
+.song-item-image {
+  text-align: center;
+  width: 200px;
+}
+
+.song-item-image img {
+  width: 150px;
+}
+
+.song-item-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}

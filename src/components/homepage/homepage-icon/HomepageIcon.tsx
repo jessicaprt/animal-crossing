@@ -11,7 +11,7 @@ export class HomepageIcon extends React.Component<{homepageItem: IHomepageItem},
 
   render() {
     return (
-      <Grid item spacing={2} xs={4}>  
+      <Grid item xs={4}>  
         <Link to={this.props.homepageItem.link}>
           <div className="homepage-item-container padded-1y">
             <div className="homepage-item">

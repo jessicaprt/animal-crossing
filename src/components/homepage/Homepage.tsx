@@ -43,7 +43,7 @@ export class Homepage extends React.Component<{}, {time: string}> {
         id: 'homepage-icon--2',
         name: "Music",
         imageUrl: "music_icon.png",
-        link: '/'
+        link: '/music'
       },
       {
         id: 'homepage-icon--3',
@@ -79,7 +79,7 @@ export class Homepage extends React.Component<{}, {time: string}> {
             <h1 className="font-color-dark homepage-title">Animal Crossing: New Horizons</h1>
 
             <div className="padded-6y homepage-grid-wrapper">
-              <Grid container>
+              <Grid container spacing={2}>
                 {icons.map((homepageItem: IHomepageItem) => <HomepageIcon key={homepageItem.id} homepageItem={homepageItem}/> )}
               </Grid>
             </div>

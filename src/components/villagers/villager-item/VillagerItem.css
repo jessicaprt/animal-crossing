@@ -24,7 +24,7 @@
 }
 
 .MuiPaper-elevation1 {
-  box-shadow: none !important;
+  /* box-shadow: none !important; */
 }
 
 .MuiExpansionPanel-root:before {

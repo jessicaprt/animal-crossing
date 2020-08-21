@@ -37,22 +37,6 @@
   overflow: hidden;
 }
 
-.villager-title-container {
-  position: relative;
-}
-
-.villager-search-wrapper {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  top: 30px;
-  right: 0;
-}
-
-.villager-search-icon {
-  padding-right: 10px;
-}
-
 .MuiTextField-root {
   background-color: #fff;
 }

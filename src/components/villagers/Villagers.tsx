@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { VillagersManager } from './VillagersManager'
 import { Container, Modal, AccordionSummary, Accordion, AccordionDetails, TextField, Chip } from '@material-ui/core';
@@ -295,10 +295,10 @@ export class Villagers extends VillagersManager {
     return (
       <div className="background-main padded-6y villagers-wrapper">
         <Container>
-          <div className="villager-title-container">
+          <div className="app-title-container">
             <PageTitle pageTitle="Villagers" backLink="/" backLinkDisplay="Home" />
-            <div className="villager-search-wrapper">
-              <div className="villager-search-icon"><SearchIcon fontSize="large" /></div>
+            <div className="app-search-wrapper">
+              <div className="app-search-icon"><SearchIcon fontSize="large" /></div>
               <TextField id="outlined-basic" label="Search Villager" variant="outlined" onChange={event => this.textSearchChange(event.target.value)} /> 
             </div>
           </div>
