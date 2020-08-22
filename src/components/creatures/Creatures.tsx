@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { CreaturesManager } from './CreaturesManager';
-import { Container, Tabs, Tab } from '@material-ui/core';
+import { Container, Tabs, Tab, Button, Tooltip } from '@material-ui/core';
 import './Creatures.css';
 import { PageTitle } from '../shared/page-title/PageTitle';
 import { Creature } from './creature/Creature';
@@ -151,6 +151,15 @@ export class Creatures extends CreaturesManager {
         <Container>
           <div className="app-title-container">
             <PageTitle pageTitle="Creatures" backLink="/" backLinkDisplay="Home" />
+            <div className="app-title-button-wrapper">
+            <Tooltip title="Feature will be available soon" aria-label="add">
+              <div>
+                <Button variant="contained" disabled>
+                  Availability Calendar
+                </Button>
+              </div>
+            </Tooltip>
+            </div>
           </div>
 
           <div className="padded-2y creatures-container main-section">

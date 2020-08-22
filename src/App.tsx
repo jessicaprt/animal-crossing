@@ -1,22 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import { Homepage } from './components/homepage/Homepage';
-import { Page } from './components/page/Page';
 
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import { Villagers } from './components/villagers/Villagers';
 import { Music } from './components/music/Music';
 import { Creatures } from './components/creatures/Creatures';
+import { Diy } from './components/items/diy/Diy';
 
 function App() {
   return (
-    <BrowserRouter baseName={process.env.PUBLIC_URL}>
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <div>
-        <Switch>
 
-          <Route exact={true}
+        <Route exact path="/" component={Homepage} />
+        <Route path="/music" component={Music} />
+        <Route path="/villagers" component={Villagers} />
+        <Route path="/creatures" component={Creatures} />
+          {/* <Route exact={true}
             path='/'
             render={() => (
               <div className="App">
@@ -48,9 +50,16 @@ function App() {
               </div>
           )}/>
 
-        </Switch>
+          <Route exact={true}
+            path='/diy'
+            render={() => (
+              <div className="App">
+                <Diy />
+              </div>
+          )}/> */}
+
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

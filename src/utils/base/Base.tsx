@@ -1,7 +1,7 @@
 import React from 'react'; 
 
 export class Base extends React.Component<{}, {data: any}> {
-  private _baseEndpoint = 'http://acnhapi.com/v1';
+  private _baseEndpoint = 'https://acnhapi.com/v1';
   
   /**
    * GET call
