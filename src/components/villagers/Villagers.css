@@ -18,10 +18,10 @@
   text-align: right;
 }
 
-.vilalger-chip-list {
-  position: absolute;
+.villager-chip-list {
+  /* position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%); */
 }
 
 .villager-chip {
@@ -32,5 +32,5 @@
 }
 
 .MuiTextField-root {
-  background-color: #fff;
+  /* background-color: #fff; */
 }

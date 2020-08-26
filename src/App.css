@@ -11,6 +11,10 @@ body,
   color: #dfd9c6
 }
 
+.font-color-white {
+  color: #fff;
+}
+
 .background-main {
   background-color: #f6f3e6;
 }
@@ -94,6 +98,11 @@ body,
   right: 20px;
   top: 20px;
   cursor: pointer;
+}
+
+.app-button {
+  background-color: #938979 !important;
+  color: #dfd9c6 !important;
 }
 
 .MuiPaper-elevation1:before,

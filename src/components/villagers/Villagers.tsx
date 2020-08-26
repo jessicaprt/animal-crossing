@@ -30,7 +30,7 @@ export class Villagers extends VillagersManager {
     super(props);
     this._isMounted = false;
 
-    const _emptioRadioFilters: IVillageFiltersSelection = {
+    const _emptyRadioFilters: IVillageFiltersSelection = {
       hobby: 'all',
       gender: 'all',
       personality: 'all',
@@ -48,7 +48,7 @@ export class Villagers extends VillagersManager {
         allGender: [],
         allSpecies: [],
         textFilter: '',
-        radioFilters: _emptioRadioFilters
+        radioFilters: _emptyRadioFilters
       }
     }
 
@@ -56,6 +56,7 @@ export class Villagers extends VillagersManager {
     this.closeVillagerModal = this.closeVillagerModal.bind(this);
     this.textSearch = this.textSearch.bind(this);
     this.filterSelectionChange = this.filterSelectionChange.bind(this);
+    this.showFilterLabel = this.showFilterLabel.bind(this);
   }
 
   componentWillUnmount() {
@@ -71,42 +72,35 @@ export class Villagers extends VillagersManager {
 
     this._getAllVillagers().then((villagers: any) => {
       this._isMounted = true;
-      for (const v in villagers) {
-        if (villagers.hasOwnProperty(v)) {
-          const _newVillager: IVillager = this.renderVillager(villagers[v])
-          
-          _allVillagers.push(_newVillager);
+      villagers.forEach((villager: any) => {
+        const _newVillager: IVillager = this.renderVillager(villager)
 
-          // set options for filters
-          if (!_allPersonalities.includes(_newVillager.personality)) {
-            _allPersonalities.push(_newVillager.personality);
-          }
+        _allVillagers.push(_newVillager);
 
-          if (!_allHobbies.includes(_newVillager.hobby)) {
-            _allHobbies.push(_newVillager.hobby);
-          }
-
-          if (!_allGender.includes(_newVillager.gender)) {
-            _allGender.push(_newVillager.gender);
-          }
-
-          if (!_allSpecies.includes(_newVillager.species)) {
-            _allSpecies.push(_newVillager.species);
-          }
+        // set options for filters
+        if (!_allPersonalities.includes(_newVillager.personality)) {
+          _allPersonalities.push(_newVillager.personality);
         }
-      }
 
-      // set state
-      this.setState({
-        data: {
-          allVillagers: _allVillagers,
-          filteredVillagers: _allVillagers,
-          allPersonalities: _allPersonalities,
-          allHobbies: _allHobbies,
-          allGender: _allGender,
-          allSpecies: _allSpecies
+        if (!_allHobbies.includes(_newVillager.hobby)) {
+          _allHobbies.push(_newVillager.hobby);
+        }
+
+        if (!_allGender.includes(_newVillager.gender)) {
+          _allGender.push(_newVillager.gender);
+        }
+
+        if (!_allSpecies.includes(_newVillager.species)) {
+          _allSpecies.push(_newVillager.species);
         }
       });
+
+      this._changeState('allVillagers', _allVillagers);
+      this._changeState('filteredVillagers', _allVillagers);
+      this._changeState('allPersonalities', _allPersonalities);
+      this._changeState('allHobbies', _allHobbies);
+      this._changeState('allGender', _allGender);
+      this._changeState('allSpecies', _allSpecies);
     });
   }
 
@@ -239,7 +233,6 @@ export class Villagers extends VillagersManager {
    */
   textSearchChange(searchString: string) {
     this._changeState('textFilter', searchString);
-    console.log('searching: ', this.state.data.textFilter);
     this.allSearch();
   }
 
@@ -265,6 +258,15 @@ export class Villagers extends VillagersManager {
     _filtered = this.radioSearch(_filteredString);
 
     this._changeState('filteredVillagers', _filtered);
+  }
+
+  showFilterLabel() {
+    const _filters:IVillageFiltersSelection = this.state.data.radioFilters;
+    if (!_filters) {
+      return false;
+    }
+
+    return _filters.gender != 'all' || _filters.hobby != 'all' || _filters.personality != 'all' || _filters.species != 'all';
   }
 
   render() {
@@ -293,14 +295,6 @@ export class Villagers extends VillagersManager {
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}>
               <div className="villager-filter-title font-color-dark">
-                <div className="padded-4x">
-                  {_selectedFilter ? <div className="vilalger-chip-list">
-                    <FilterChip filter={_selectedFilter.gender} filterLabel="Gender" />
-                    <FilterChip filter={_selectedFilter.hobby} filterLabel="Hobby" />
-                    <FilterChip filter={_selectedFilter.personality} filterLabel="Personality" />
-                    <FilterChip filter={_selectedFilter.species} filterLabel="Species" />
-                  </div> : null}
-                </div>
                 <h3>Filters</h3>
               </div>
             </AccordionSummary>
@@ -308,22 +302,33 @@ export class Villagers extends VillagersManager {
               <VillagerFilters onFilterSelecionChange={this.filterSelectionChange} availableFilters={_availableFilters}/>
             </AccordionDetails>
           </Accordion>
-          {
-            this.state.data.filteredVillagers ? 
-            <div>
-              <p className="font-color-light">Villagers: {this.state.data.filteredVillagers.length}</p>
-              <div className="villagers-container main-section">
-                {this.state.data.filteredVillagers.map(
-                  (villager: IVillager) => 
-                    <div key={villager.id} onClick={() => {this.openVillagerModal(villager)}}>
-                      <VillagerItem villager={villager} />
-                    </div>
-                  ) 
-                }
-              </div> 
-            </div>
-            : null
-          }
+          <div>
+            {
+              this.state.data.filteredVillagers ? 
+              <div>
+                <div className="padded-2y">
+                  {this.showFilterLabel() ? <p className="font-color-dark">Filtered by:</p> : null}
+                  {_selectedFilter ? <div className="villager-chip-list">
+                    <FilterChip filter={_selectedFilter.gender} filterLabel="Gender" />
+                    <FilterChip filter={_selectedFilter.hobby} filterLabel="Hobby" />
+                    <FilterChip filter={_selectedFilter.personality} filterLabel="Personality" />
+                    <FilterChip filter={_selectedFilter.species} filterLabel="Species" />
+                  </div> : null}
+                </div>
+                <p className="font-color-dark">Showing {this.state.data.filteredVillagers.length} out of {this.state.data.allVillagers.length}</p>
+                <div className="villagers-container main-section">
+                  {this.state.data.filteredVillagers.map(
+                    (villager: IVillager) => 
+                      <div key={villager.id} onClick={() => {this.openVillagerModal(villager)}}>
+                        <VillagerItem villager={villager} />
+                      </div>
+                    ) 
+                  }
+                </div> 
+              </div>
+              : null
+            }
+          </div>
         </Container>
         <Modal open={_modalOpen} onClose={this.closeVillagerModal}>
           <div className="app-modal-wrapper">

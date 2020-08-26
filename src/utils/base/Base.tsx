@@ -1,7 +1,7 @@
 import React from 'react'; 
 
 export class Base extends React.Component<{}, {data: any}> {
-  private _baseEndpoint = 'https://acnhapi.com/v1';
+  private _baseEndpoint = 'https://acnhapi.com/v1a';
   
   /**
    * GET call
@@ -29,6 +29,8 @@ export class Base extends React.Component<{}, {data: any}> {
     let currentState = this.state.data;
     currentState[key] = value;
 
-    this.setState(currentState);
+    this.setState({
+      data: currentState
+    });
   }
 }

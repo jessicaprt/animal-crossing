@@ -1,3 +1,75 @@
 .music-wrapper {
   min-height: 100vh;
 }
+
+.music-songs-container {
+  background-color: #dfd9c6;
+}
+
+.music-song-item {
+  border-bottom: 1px solid #938979;
+  color: #938979;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.music-song-item:hover {
+  background-color: #938979a2;
+  color: #dfd9c6;
+}
+
+.music-play-icon {
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+
+.music-now-playing {
+  background-color: #938979;
+  text-align: center;
+}
+
+.music-now-playing img {
+  width: 300px;
+}
+
+.music-now-playing h3,
+.music-now-playing h4 {
+  margin: 0;
+}
+
+.np-full {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.np-minimized {
+  max-height: 150px;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  bottom:0;
+  left: 0;
+  z-index: 99;
+  align-items: center;
+   transition-timing-function: ease-in;
+  transition: 0.25s;
+  transform: translateY(0);
+}
+
+.np-minimized img {
+  width: 50px !important;
+}
+
+.np-min-hide {
+  position: fixed;
+  bottom:0;
+  transform: translateY(500px);
+}
+
+@media (max-width: 600px) { 
+  .music-now-playing img {
+    width: 150px;
+  }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ICreature } from '../ICreature';
-import { Grid, Chip } from '@material-ui/core';
+import { Grid, Chip, Button } from '@material-ui/core';
 
 import CloseIcon from '@material-ui/icons/Close';
 
@@ -86,6 +86,12 @@ export class CreatureDetails extends React.Component<ICreatureDetailsProps, {}> 
             </div>
           </Grid>
         </Grid>
+
+        <div className="creature-details-main padded-2y">
+          <Button className="app-button" variant="contained" disableElevation onClick={this.props.closeAction}>
+            <CloseIcon style={{marginRight: '5px'}}/> Close
+          </Button>
+        </div>
       </div>
     )
   }

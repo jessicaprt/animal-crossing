@@ -56,26 +56,25 @@ export class Creatures extends CreaturesManager {
   renderCreature(creatures: any, kind: string): ICreature[] {
     const _allCreatures: ICreature[] = [];
 
-    Object.keys(creatures).forEach((key: string) => {
-      const _currentCreature: any = creatures[key];
+    creatures.forEach((creature: string) => {
       const _newCreature: ICreature = {
         kind: kind,
-        id: _currentCreature['id'],
-        isAllDay: _currentCreature['availability']['isAllDay'],
-        isAllYear: _currentCreature['availability']['isAllYear'],
-        location: _currentCreature['availability']['location'],
-        monthsAvailable_northern: this.getMonthArray(_currentCreature['availability']['month-array-northern']),
-        monthsAvailable_southern: this.getMonthArray(_currentCreature['availability']['month-array-southern']),
-        timeAvailable: _currentCreature['availability']['time-array'],
-        timeString: _currentCreature['availability']['time'],
-        iconUri: _currentCreature['icon_uri'],
-        imageUri: _currentCreature['image_uri'],
-        museumInfo: _currentCreature['museum-phrase'],
-        name: _currentCreature['name']['name-USen'],
-        price: _currentCreature['price'],
-        price_cj: _currentCreature['price-cj'] || null,
-        price_flick: _currentCreature['price-flick'] || null,
-        shadow: _currentCreature['shadow']
+        id: creature['id'],
+        isAllDay: creature['availability']['isAllDay'],
+        isAllYear: creature['availability']['isAllYear'],
+        location: creature['availability']['location'],
+        monthsAvailable_northern: this.getMonthArray(creature['availability']['month-array-northern']),
+        monthsAvailable_southern: this.getMonthArray(creature['availability']['month-array-southern']),
+        timeAvailable: creature['availability']['time-array'],
+        timeString: creature['availability']['time'],
+        iconUri: creature['icon_uri'],
+        imageUri: creature['image_uri'],
+        museumInfo: creature['museum-phrase'],
+        name: creature['name']['name-USen'],
+        price: creature['price'],
+        price_cj: creature['price-cj'] || null,
+        price_flick: creature['price-flick'] || null,
+        shadow: creature['shadow']
       };
 
       _allCreatures.push(_newCreature);

@@ -2,11 +2,11 @@ import React from 'react';
 import '../Creature.css';
 import { ICreature } from '../../ICreature';
 
-interface IFishProps {
-  fish: ICreature
+interface ICreatureProps {
+  creature: ICreature
 }
 
-export class CreatureItem extends React.Component<IFishProps, {}> {
+export class CreatureItem extends React.Component<ICreatureProps, {}> {
   constructor(props) {
     super(props);
   }
@@ -22,10 +22,10 @@ export class CreatureItem extends React.Component<IFishProps, {}> {
     return (
       <div className="fish-item">
         <div className="fish-item-image">
-          <img src={this.props.fish.iconUri} alt={this.props.fish.name}/>
+          <img src={this.props.creature.iconUri} alt={this.props.creature.name}/>
         </div>
         <h3 className="fish-item-name font-color-dark">
-          {this.props.fish.name}
+          {this.props.creature.name}
         </h3>
       </div>
     );

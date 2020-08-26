@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { IVillager } from '../IVillager';
-import { Grid, Chip } from '@material-ui/core';
+import { Grid, Chip, Button } from '@material-ui/core';
 
 import CloseIcon from '@material-ui/icons/Close';
 
@@ -33,7 +33,7 @@ export class VillagerDetails extends React.Component<{villager: IVillager, close
           <Grid container spacing={2} >
             <Grid item xs={12} md={6}>
               <div className="villager-details-image">
-                <img src={_villager.imageUri} />
+                <img src={_villager.imageUri} alt={_villager.name} />
                 <h3 className="villager-details-saying">"{_villager.saying}"</h3>
               </div>
             </Grid>
@@ -50,7 +50,6 @@ export class VillagerDetails extends React.Component<{villager: IVillager, close
             </Grid>
           </Grid>
         </div>
-
         <div className="padded-1y">
           <div className="villager-details-line background-dark"></div>
         </div>
@@ -64,6 +63,14 @@ export class VillagerDetails extends React.Component<{villager: IVillager, close
             </tbody>
           </table>
         </div>
+
+        <div className="padded-1y">
+          <div className="villager-details-line background-dark"></div>
+        </div>
+
+        <Button className="app-button" variant="contained" disableElevation onClick={this.props.closeAction}>
+          <CloseIcon style={{marginRight: '5px'}}/> Close
+        </Button>
       </div>
     )
   }
