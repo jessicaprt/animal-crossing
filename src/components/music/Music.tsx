@@ -26,7 +26,7 @@ export class Music extends MusicManager {
         allSongs: [],
         filteredSongs: [],
         currentSong: null,
-        nowPlayingDisplay: 'np-full'
+        nowPlayingDisplay: 'np-hide'
       }
     }
 
@@ -143,15 +143,10 @@ export class Music extends MusicManager {
               <div className="music-now-playing-title padded-2y padded-2x">
                 <h4 className="font-color-white">Now Playing</h4>
                 <h3 className="font-color-white">{_currentSong.name}</h3>
-              </div>
-              {_nowPlayingDisplay == 'np-full' ?
-                <audio ref={this.audioRef} controls autoPlay>
-                  <source src={_currentSong.musicUri} type="audio/mpeg" />
-                </audio>
-              : <audio ref={this.audioRef} autoPlay>
-                  <source src={_currentSong.musicUri} type="audio/mpeg" />
-                </audio>
-              }
+            </div>
+              <audio ref={this.audioRef} controls autoPlay>
+                <source src={_currentSong.musicUri} type="audio/mpeg" />
+              </audio>
             </div> 
             : null
           }
@@ -169,16 +164,15 @@ export class Music extends MusicManager {
             : null}
           </div>
 
-          {_currentSong && _nowPlayingDisplay == 'np-minimized' ? 
-            <div className="music-now-playing padded-2x np-minimized">
+          {_currentSong ? 
+            <div className={`music-now-playing padded-2x ${_nowPlayingDisplay}`}>
               <img src={_currentSong.imageUri} alt={_currentSong.name} />
               <div className="music-now-playing-title padded-2y padded-2x">
                 <h4 className="font-color-white">Now Playing</h4>
                 <h3 className="font-color-white">{_currentSong.name}</h3>
               </div>
-            </div> 
-            : null
-          }
+            </div>
+          : null }
         </Container>
       </div>
     )
