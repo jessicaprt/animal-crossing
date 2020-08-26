@@ -138,7 +138,7 @@ export class Music extends MusicManager {
             </div>
           </div>
           {_currentSong ? 
-            <div className={`music-now-playing padded-2x ${_nowPlayingDisplay}`}>
+            <div className="music-now-playing padded-2x np-full">
               <img src={_currentSong.imageUri} alt={_currentSong.name} />
               <div className="music-now-playing-title padded-2y padded-2x">
                 <h4 className="font-color-white">Now Playing</h4>
@@ -155,6 +155,7 @@ export class Music extends MusicManager {
             </div> 
             : null
           }
+
           <div ref={this.songListRef} className="music-songs-container">
             {this.state.data.filteredSongs ? 
               this.state.data.filteredSongs.map((song: IMusic) => 
@@ -167,6 +168,17 @@ export class Music extends MusicManager {
               )
             : null}
           </div>
+
+          {_currentSong && _nowPlayingDisplay == 'np-minimized' ? 
+            <div className="music-now-playing padded-2x np-minimized">
+              <img src={_currentSong.imageUri} alt={_currentSong.name} />
+              <div className="music-now-playing-title padded-2y padded-2x">
+                <h4 className="font-color-white">Now Playing</h4>
+                <h3 className="font-color-white">{_currentSong.name}</h3>
+              </div>
+            </div> 
+            : null
+          }
         </Container>
       </div>
     )

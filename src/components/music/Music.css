@@ -63,12 +63,6 @@
   width: 50px !important;
 }
 
-.np-min-hide {
-  position: fixed;
-  bottom:0;
-  transform: translateY(500px);
-}
-
 @media (max-width: 600px) { 
   .music-now-playing img {
     width: 150px;
