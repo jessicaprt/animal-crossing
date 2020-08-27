@@ -55,7 +55,7 @@ export class Homepage extends React.Component<{}, {time: string}> {
         id: 'homepage-icon--4',
         name: "DIY",
         imageUrl: "diy_icon.png",
-        link: '/diy'
+        link: '/'
       },
       {
         id: 'homepage-icon--5',

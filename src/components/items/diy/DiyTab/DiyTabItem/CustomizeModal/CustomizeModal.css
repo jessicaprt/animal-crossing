@@ -1,0 +1,21 @@
+.customize-modal-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-bottom: 3px solid #938979;
+  margin-bottom: 20px;
+}
+
+.customize-modal-item {
+  text-align: center;
+}
+
+.customize-modal-image {
+  border: 3px solid #938979;
+  width: 90px;
+  margin: 0 auto;
+}
+
+.customize-modal-image img {
+  width: 90px;
+}

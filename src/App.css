@@ -103,12 +103,18 @@ body,
 .app-button {
   background-color: #938979 !important;
   color: #dfd9c6 !important;
+  font-family: 'Dosis', sans-serif !important;
 }
 
 .MuiPaper-elevation1:before,
 .MuiPaper-elevation1 {
   box-shadow: none !important;
   background-color: #fff !important;
+}
+
+.MuiListItem-button {
+  font-family: 'Dosis', sans-serif !important;
+  color: #938979 !important;
 }
 
 @media (max-width: 600px) { 

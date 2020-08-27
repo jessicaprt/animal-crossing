@@ -1,0 +1,29 @@
+.diy-tab-item {
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.diy-tab-image {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto;
+  border: 3px solid #938979;
+  position: relative;
+}
+
+.diy-tab-image img {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.diy-tab-item-button-wrapper {
+  width: 100%;
+}
+
+.diy-tab-item-button {
+  margin: 3px 0 !important;
+}
