@@ -1,0 +1,119 @@
+.item-wrapper {
+  min-height: 100vh;
+}
+
+.item-container {
+  background-color: #fff;
+}
+
+.item-tab-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.item-tab-item {
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.item-tab-image {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto;
+  border: 3px solid #938979;
+  position: relative;
+  background-color: #eee;
+}
+
+.item-tab-image img {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.item-tab-item-button-wrapper {
+  width: 100%;
+}
+
+.item-tab-item-button {
+  margin: 3px 0 !important;
+}
+
+.item-price-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-price-wrapper p {
+  margin: 0;
+}
+
+.item-bells {
+  padding-right: 5px;
+}
+
+
+
+/** 
+ * VIEW MODAL 
+ **/
+
+.item-view-modal-image-container {
+  width: 100%;
+  text-align: center;
+}
+
+.item-view-modal-title {
+  margin: 0;
+}
+
+.item-view-modal-details {
+  border-top: 3px solid #938979;
+  border-bottom: 3px solid #938979;
+  margin-bottom: 20px;
+}
+
+.item-view-modal-col {
+  padding-right: 30px;
+}
+
+.item-view-chip-item {
+  margin-right: 5px;
+  background-color: #bd7ce1 !important;
+  color: #fff !important;
+  font-family: 'Dosis', sans-serif !important;
+}
+
+
+
+/** 
+ * CUSTOMIZE/COLOR MODAL 
+ **/
+
+.item-customize-modal-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-bottom: 3px solid #938979;
+  margin-bottom: 20px;
+}
+
+.item-customize-modal-item {
+  text-align: center;
+}
+
+.item-customize-modal-image {
+  border: 3px solid #938979;
+  width: 90px;
+  margin: 0 auto;
+}
+
+.item-customize-modal-image img {
+  width: 90px;
+}

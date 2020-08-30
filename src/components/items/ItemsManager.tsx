@@ -1,5 +1,7 @@
 import { Base } from "../../utils/base/Base";
 
+import './Item.css';
+
 export class ItemsManager extends Base {
   /**
    * get a list of all houseware items

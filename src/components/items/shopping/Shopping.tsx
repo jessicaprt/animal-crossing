@@ -1,13 +1,14 @@
 import React from 'react';
 
 import { ItemsManager } from "../ItemsManager";
-import { Container, Tabs, Tab } from '@material-ui/core';
+import { Container, Tabs, Tab, Tooltip } from '@material-ui/core';
 import { PageTitle } from '../../shared/page-title/PageTitle';
 
 import KitchenIcon from '@material-ui/icons/Kitchen';
 import FilterFramesIcon from '@material-ui/icons/FilterFrames';
 import LocalCafeIcon from '@material-ui/icons/LocalCafe';
 import { IItemGroup, IItem } from '../IItem';
+import { ShoppingTab } from './shoppingTab/ShoppingTab';
 
 interface IRenderedItem {
   allItems: any,
@@ -72,7 +73,7 @@ export class Shopping extends ItemsManager {
 
     items.forEach((itemGroup: any[]) => {
       let _variations: IItem[] = [];
-      if (!itemGroup[0]['isDIY']) {
+      if (!itemGroup[0]['isDIY'] && itemGroup[0]['buy-price']) {
         itemGroup.forEach((item: any) => {
           const _newDiyItem:IItem = {
             buyPrice: item['buy-price'],
@@ -132,22 +133,36 @@ export class Shopping extends ItemsManager {
     const _allMiscItemsLength:number = this.state.data.allMiscItems.length;
 
     return (
-      <div className="background-main padded-6y diy-wrapper">
+      <div className="background-main padded-6y item-wrapper">
         <Container>
           <div className="app-title-container">
             <PageTitle pageTitle="Shopping" backLink="/" backLinkDisplay="Home" />
           </div>
-          <div className="padded-2y padded-4x diy-container main-section">
+          <div className="padded-2y padded-4x item-container main-section">
             <Tabs
               value={_activeTab}
               onChange={this.handleTabChange}
               indicatorColor="primary"
               textColor="primary"
               centered>
-              <Tab icon={<KitchenIcon />} />
-              <Tab icon={<FilterFramesIcon />} />
-              <Tab icon={<LocalCafeIcon />} />
+              <Tab icon={<Tooltip title="Housewares"><KitchenIcon /></Tooltip>} />
+              <Tab icon={<Tooltip title="Wallmounted"><FilterFramesIcon /></Tooltip>} />
+              <Tab icon={<Tooltip title="Miscellaneous"><LocalCafeIcon /></Tooltip>} />
             </Tabs>
+
+            <div className="item-section">
+              {_activeTab === 0 &&
+                <ShoppingTab title="Houseware" pagedDiyItems={_pagedHousewareItems} allDiyItemsLength={_allHousewareItemsLength} />
+              }
+
+              {_activeTab === 1 &&
+                <ShoppingTab title="Wallmounted" pagedDiyItems={_pagedWallmountedItems} allDiyItemsLength={_allWallmountedItemsLength} />
+              }
+
+              {_activeTab === 2 &&
+                <ShoppingTab title="Miscellaneous" pagedDiyItems={_pagedMiscItems} allDiyItemsLength={_allMiscItemsLength} />
+              }
+            </div>
           </div>
         </Container>
       </div>

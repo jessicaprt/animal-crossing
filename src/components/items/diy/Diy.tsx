@@ -5,13 +5,13 @@ import { Container, Tabs, Tab } from '@material-ui/core';
 import { PageTitle } from '../../shared/page-title/PageTitle';
 
 import { IItem, IItemGroup } from '../IItem';
-import { DiyTab } from './DiyTab/DiyTab';
+import { DiyTab } from './diyTab/DiyTab';
 
 import KitchenIcon from '@material-ui/icons/Kitchen';
 import FilterFramesIcon from '@material-ui/icons/FilterFrames';
 import LocalCafeIcon from '@material-ui/icons/LocalCafe';
 
-import './Diy.css';
+import '../Item.css';
 
 interface IRenderedItem {
   allItems: any,
@@ -135,7 +135,7 @@ export class Diy extends ItemsManager {
     const _allMiscItemsLength:number = this.state.data.allMiscItems.length;
 
     return (
-      <div className="background-main padded-6y diy-wrapper">
+      <div className="background-main padded-6y item-wrapper">
         <Container>
           <div className="app-title-container">
             <PageTitle pageTitle="DIY Items" backLink="/" backLinkDisplay="Home" />
@@ -145,7 +145,7 @@ export class Diy extends ItemsManager {
             </div>
           </div>
           
-          <div className="padded-2y padded-4x diy-container main-section">
+          <div className="padded-2y padded-4x item-container main-section">
             <Tabs
               value={_activeTab}
               onChange={this.handleTabChange}
@@ -157,17 +157,17 @@ export class Diy extends ItemsManager {
               <Tab icon={<LocalCafeIcon />} />
             </Tabs>
 
-            <div className="diy-section">
+            <div className="item-section">
               {_activeTab === 0 &&
-                <DiyTab pagedDiyItems={_pagedHousewareItems} allDiyItemsLength={_allHousewareItemsLength} />
+                <DiyTab title="Houseware" pagedDiyItems={_pagedHousewareItems} allDiyItemsLength={_allHousewareItemsLength} />
               }
 
               {_activeTab === 1 &&
-                <DiyTab pagedDiyItems={_pagedWallmountedItems} allDiyItemsLength={_allWallmountedItemsLength} />
+                <DiyTab title="Wallmounted" pagedDiyItems={_pagedWallmountedItems} allDiyItemsLength={_allWallmountedItemsLength} />
               }
 
               {_activeTab === 2 &&
-                <DiyTab pagedDiyItems={_pagedMiscItems} allDiyItemsLength={_allMiscItemsLength} />
+                <DiyTab title="Miscellaneous" pagedDiyItems={_pagedMiscItems} allDiyItemsLength={_allMiscItemsLength} />
               }
             </div>
           </div>

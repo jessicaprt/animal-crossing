@@ -1,11 +1,10 @@
 import React from 'react';
 import { IItem, IItemGroup } from '../../IItem';
 import Pagination from '@material-ui/lab/Pagination';
-import { DiyTabItem } from './DiyTabItem/DiyTabItem';
-
-import './DiyTab.css';
+import { DiyTabItem } from './diyTabItem/DiyTabItem';
 
 interface IDiyTabProps {
+  title: string;
   pagedDiyItems: any[];
   allDiyItemsLength: number;
 }
@@ -59,10 +58,11 @@ export class DiyTab extends React.Component<IDiyTabProps, IDiyTabState> {
     const _endRange = _pagedData && _pagedData[_i-1] ? ((_i-1)*100) + _pagedData[_i-1].length : 0;
 
     return (
-      <div className="diy-tab-wrapper padded-4y">
-        <p className="font-color-light">showing {_startRange} - {_endRange} of {this.props.allDiyItemsLength}</p>
+      <div className="item-tab-wrapper padded-4y">
+        <h1 className="font-color-dark">{this.props.title}</h1>
+        <p className="font-color-light">showing {_startRange} - {_endRange} of {this.props.allDiyItemsLength} {this.props.title} Items</p>
         
-        <div className="diy-tab-container">
+        <div className="item-tab-container">
           {_data && _data.length ?
             _data.map((itemGroup: IItemGroup) => {
               return <DiyTabItem key={itemGroup.variations[0].name} diyItemGroup={itemGroup}/>
