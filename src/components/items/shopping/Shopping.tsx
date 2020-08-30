@@ -1,24 +1,20 @@
 import React from 'react';
-import { ItemsManager } from '../ItemsManager';
 
+import { ItemsManager } from "../ItemsManager";
 import { Container, Tabs, Tab } from '@material-ui/core';
 import { PageTitle } from '../../shared/page-title/PageTitle';
-
-import { IItem, IItemGroup } from '../IItem';
-import { DiyTab } from './DiyTab/DiyTab';
 
 import KitchenIcon from '@material-ui/icons/Kitchen';
 import FilterFramesIcon from '@material-ui/icons/FilterFrames';
 import LocalCafeIcon from '@material-ui/icons/LocalCafe';
-
-import './Diy.css';
+import { IItemGroup, IItem } from '../IItem';
 
 interface IRenderedItem {
   allItems: any,
   pagedItems: any
 }
 
-export class Diy extends ItemsManager {
+export class Shopping extends ItemsManager {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,7 +28,7 @@ export class Diy extends ItemsManager {
         pagedMiscItems: []
       }
     }
-
+  
     this.handleTabChange = this.handleTabChange.bind(this);
   }
 
@@ -41,6 +37,7 @@ export class Diy extends ItemsManager {
       const items: IRenderedItem = this.renderItems(housewares);
       this._changeState('allHousewareItems', items.allItems);
       this._changeState('pagedHousewareItems', items.pagedItems);
+      console.log(items.allItems);
     });
 
     this._getAllWallmountedItems().then((wallmounted: any) => {
@@ -75,7 +72,7 @@ export class Diy extends ItemsManager {
 
     items.forEach((itemGroup: any[]) => {
       let _variations: IItem[] = [];
-      if (itemGroup[0]['isDIY']) {
+      if (!itemGroup[0]['isDIY']) {
         itemGroup.forEach((item: any) => {
           const _newDiyItem:IItem = {
             buyPrice: item['buy-price'],
@@ -138,13 +135,8 @@ export class Diy extends ItemsManager {
       <div className="background-main padded-6y diy-wrapper">
         <Container>
           <div className="app-title-container">
-            <PageTitle pageTitle="DIY Items" backLink="/" backLinkDisplay="Home" />
-            <div className="app-search-wrapper">
-              {/* <div className="app-search-icon"><SearchIcon fontSize="large" /></div>
-              <TextField id="outlined-basic" label="Search Villager" variant="outlined" onChange={event => this.textSearchChange(event.target.value)} />  */}
-            </div>
+            <PageTitle pageTitle="Shopping" backLink="/" backLinkDisplay="Home" />
           </div>
-          
           <div className="padded-2y padded-4x diy-container main-section">
             <Tabs
               value={_activeTab}
@@ -156,20 +148,6 @@ export class Diy extends ItemsManager {
               <Tab icon={<FilterFramesIcon />} />
               <Tab icon={<LocalCafeIcon />} />
             </Tabs>
-
-            <div className="diy-section">
-              {_activeTab === 0 &&
-                <DiyTab pagedDiyItems={_pagedHousewareItems} allDiyItemsLength={_allHousewareItemsLength} />
-              }
-
-              {_activeTab === 1 &&
-                <DiyTab pagedDiyItems={_pagedWallmountedItems} allDiyItemsLength={_allWallmountedItemsLength} />
-              }
-
-              {_activeTab === 2 &&
-                <DiyTab pagedDiyItems={_pagedMiscItems} allDiyItemsLength={_allMiscItemsLength} />
-              }
-            </div>
           </div>
         </Container>
       </div>
