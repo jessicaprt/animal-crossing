@@ -61,12 +61,30 @@ export class Homepage extends React.Component<{}, {time: string}> {
         id: 'homepage-icon--5',
         name: "Shopping",
         imageUrl: "shopping_icon.png",
-        link: '/'
+        link: '/shopping'
       },
       {
         id: 'homepage-icon--6',
+        name: "Freebies",
+        imageUrl: "freebies_icon.png",
+        link: '/'
+      },
+      {
+        id: 'homepage-icon--7',
         name: "Art",
         imageUrl: "art_icon.png",
+        link: '/'
+      },
+      {
+        id: 'homepage-icon--7',
+        name: "Fossils",
+        imageUrl: "fossil_icon.png",
+        link: '/'
+      },
+      {
+        id: 'homepage-icon--8',
+        name: "Hourly Music",
+        imageUrl: "hourly_music_icon.png",
         link: '/'
       },
     ];
@@ -76,7 +94,7 @@ export class Homepage extends React.Component<{}, {time: string}> {
         <div className="homepage-container">
           <Container>
             <h3 className="font-color-light homepage-time">{this.state.time}</h3>
-            <h1 className="font-color-dark homepage-title">Animal Crossing: New Horizons</h1>
+            <h1 className="font-color-dark homepage-title">Nookbook</h1>
 
             <div className="padded-6y homepage-grid-wrapper">
               <Grid container spacing={2}>

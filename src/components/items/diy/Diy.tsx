@@ -1,7 +1,7 @@
 import React from 'react';
 import { ItemsManager } from '../ItemsManager';
 
-import { Container, Tabs, Tab } from '@material-ui/core';
+import { Container, Tabs, Tab, Tooltip } from '@material-ui/core';
 import { PageTitle } from '../../shared/page-title/PageTitle';
 
 import { IItem, IItemGroup } from '../IItem';
@@ -152,9 +152,9 @@ export class Diy extends ItemsManager {
               indicatorColor="primary"
               textColor="primary"
               centered>
-              <Tab icon={<KitchenIcon />} />
-              <Tab icon={<FilterFramesIcon />} />
-              <Tab icon={<LocalCafeIcon />} />
+              <Tab icon={<Tooltip title="Housewares"><KitchenIcon /></Tooltip>} />
+              <Tab icon={<Tooltip title="Wallmounted"><FilterFramesIcon /></Tooltip>} />
+              <Tab icon={<Tooltip title="Miscellaneous"><LocalCafeIcon /></Tooltip>} />
             </Tabs>
 
             <div className="item-section">
