@@ -6,6 +6,7 @@
   background-color: #fff;
 }
 
+.freebies-container,
 .item-tab-container {
   display: flex;
   flex-wrap: wrap;
@@ -110,8 +111,13 @@
 
 .item-customize-modal-image {
   border: 3px solid #938979;
-  width: 90px;
   margin: 0 auto;
+}
+
+.item-customize-modal-image,
+.item-customize-modal-text {
+  width: 90px;
+
 }
 
 .item-customize-modal-image img {

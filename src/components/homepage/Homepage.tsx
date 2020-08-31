@@ -65,7 +65,7 @@ export class Homepage extends React.Component<{}, {time: string}> {
       },
       {
         id: 'homepage-icon--6',
-        name: "Freebies",
+        name: "Freebies and Redeemable",
         imageUrl: "freebies_icon.png",
         link: '/'
       },
@@ -76,13 +76,13 @@ export class Homepage extends React.Component<{}, {time: string}> {
         link: '/'
       },
       {
-        id: 'homepage-icon--7',
+        id: 'homepage-icon--8',
         name: "Fossils",
         imageUrl: "fossil_icon.png",
         link: '/'
       },
       {
-        id: 'homepage-icon--8',
+        id: 'homepage-icon--9',
         name: "Hourly Music",
         imageUrl: "hourly_music_icon.png",
         link: '/'

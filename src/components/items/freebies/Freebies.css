@@ -1,0 +1,32 @@
+.freebies-item-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.freebies-all-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.freebies-all-item {
+  border: 3px solid #938979;
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+}
+
+.freebies-all-item:hover {
+  opacity: 0.5;
+}
+
+.freebies-all-item,
+.freebies-all-item-skeleton {
+  text-align: center;
+  margin: 5px;
+}
+
+.freebies-all-item-skeleton {
+  width: 140px;
+  height: 140px;
+}

@@ -19,5 +19,11 @@ export interface IItem {
 }
 
 export interface IItemGroup {
-  variations: IItem[]
+  variations: IItem[];
+}
+
+export interface IFreebieGroup {
+  id_long: string;
+  id_short: string;
+  data: IItemGroup[];
 }

@@ -1,6 +1,6 @@
 import React from 'react'; 
 
-export class Base extends React.Component<{}, {data: any}> {
+export class Base extends React.Component<{match: any}, {data: any}> {
   private _baseEndpoint = 'https://acnhapi.com/v1a';
   
   /**
