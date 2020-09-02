@@ -57,7 +57,7 @@ export class Creature extends React.Component<IFishProps, IFishState> {
     return (
       <div className="padded-4x padded-2y">
         {_fishList ? 
-          <div className="fishes-container">
+          <div className="main--flex">
             {_fishList.map((creature: ICreature) => 
               <div key={creature.id} onClick={() => this.openModal(creature)}>
                 <CreatureItem creature={creature} key={creature.id}/> 
@@ -68,7 +68,7 @@ export class Creature extends React.Component<IFishProps, IFishState> {
         }
 
         <Modal open={this.state.isOpenModal} onClose={this.closeModal}>
-          <div className="app-modal-wrapper">
+          <div className="main-modal-wrapper">
             <CreatureDetails fish={this.state.currentCreature} closeAction={this.closeModal}/>
           </div>
         </Modal>

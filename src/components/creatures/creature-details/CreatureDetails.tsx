@@ -47,8 +47,8 @@ export class CreatureDetails extends React.Component<ICreatureDetailsProps, {}> 
     const _price = `${this.props.fish?.price} Bells ${_extraPrice}`;
 
     return (
-      <div className="app-modal-container padded-4y padded-2x font-color-dark">
-        <div className="app-details-close-button" onClick={this.props.closeAction}>
+      <div className="main-modal-container padded-4y padded-2x font-color-dark">
+        <div className="main-details-close-button" onClick={this.props.closeAction}>
           <CloseIcon/>
         </div>
         <Grid container spacing={2}>
@@ -88,7 +88,7 @@ export class CreatureDetails extends React.Component<ICreatureDetailsProps, {}> 
         </Grid>
 
         <div className="creature-details-main padded-2y">
-          <Button className="app-button" variant="contained" disableElevation onClick={this.props.closeAction}>
+          <Button className="main-button" variant="contained" disableElevation onClick={this.props.closeAction}>
             <CloseIcon style={{marginRight: '5px'}}/> Close
           </Button>
         </div>

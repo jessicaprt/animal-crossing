@@ -44,7 +44,6 @@ export class DiyTab extends React.Component<IDiyTabProps, IDiyTabState> {
   }
 
   setPage(val) {
-    console.log(val);
     this.changeCurrentData(this.props.pagedDiyItems[val-1]);
     this.changeState('currentPage', val)
   }
@@ -62,7 +61,7 @@ export class DiyTab extends React.Component<IDiyTabProps, IDiyTabState> {
         <h1 className="font-color-dark">{this.props.title}</h1>
         <p className="font-color-light">showing {_startRange} - {_endRange} of {this.props.allDiyItemsLength} {this.props.title} Items</p>
         
-        <div className="item-tab-container">
+        <div className="item-tab-container main--flex">
           {_data && _data.length ?
             _data.map((itemGroup: IItemGroup) => {
               return <DiyTabItem key={itemGroup.variations[0].name} diyItemGroup={itemGroup}/>

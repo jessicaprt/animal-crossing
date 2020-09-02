@@ -107,13 +107,13 @@ export class ShoppingTabItem extends React.Component<IShoppingTabItemProps, ISho
         </Menu> }
 
         <Modal open={_viewModal} onClose={this.closeViewModal}>
-          <div className="app-modal-wrapper">
+          <div className="main-modal-wrapper">
             <ShoppingViewModal item={_item} closeAction={this.closeViewModal} />
           </div>
         </Modal>
 
         <Modal open={_customizeModal} onClose={this.closeColorsModal}>
-          <div className="app-modal-wrapper">
+          <div className="main-modal-wrapper">
             <ShoppingColorsModal itemGroup={_itemGroup} closeAction={this.closeColorsModal} />
           </div>
         </Modal>

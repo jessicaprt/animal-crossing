@@ -25,8 +25,8 @@ export class VillagerDetails extends React.Component<{villager: IVillager, close
     const _villager: IVillager = this.props.villager;
 
     return (
-      <div className="app-modal-container padded-4y padded-2x font-color-dark">
-        <div className="app-details-close-button" onClick={this.props.closeAction}>
+      <div className="main-modal-container padded-4y padded-2x font-color-dark">
+        <div className="main-details-close-button" onClick={this.props.closeAction}>
           <CloseIcon/>
         </div>
         <div className="padded-2y">
@@ -68,7 +68,7 @@ export class VillagerDetails extends React.Component<{villager: IVillager, close
           <div className="villager-details-line background-dark"></div>
         </div>
 
-        <Button className="app-button" variant="contained" disableElevation onClick={this.props.closeAction}>
+        <Button className="main-button" variant="contained" disableElevation onClick={this.props.closeAction}>
           <CloseIcon style={{marginRight: '5px'}}/> Close
         </Button>
       </div>

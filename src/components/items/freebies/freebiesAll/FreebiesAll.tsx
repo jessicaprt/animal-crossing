@@ -28,7 +28,7 @@ export class FreebiesAll extends FreebiesManager {
     return (
       <div className="background-main padded-6y item-wrapper">
         <Container>
-          <div className="app-title-container">
+          <div className="main-title-container">
             <PageTitle pageTitle="Freebies and Redemptions" backLink="/" backLinkDisplay="Home" />
           </div>
           

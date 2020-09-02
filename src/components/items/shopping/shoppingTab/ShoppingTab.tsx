@@ -45,7 +45,6 @@ export class ShoppingTab extends React.Component<IShoppingTabProps, IShoppingTab
   }
 
   setPage(val) {
-    console.log(val);
     this.changeCurrentData(this.props.pagedDiyItems[val-1]);
     this.changeState('currentPage', val)
   }
@@ -63,7 +62,7 @@ export class ShoppingTab extends React.Component<IShoppingTabProps, IShoppingTab
         <h1 className="font-color-dark">{this.props.title}</h1>
         <p className="font-color-light">showing {_startRange} - {_endRange} of {this.props.allDiyItemsLength} {this.props.title} Items</p>
         
-        <div className="item-tab-container">
+        <div className="item-tab-container main--flex">
           {_data && _data.length ?
             _data.map((itemGroup: IItemGroup) => {
               return <ShoppingTabItem key={itemGroup.variations[0].name} shoppingItemGroup={itemGroup}/>

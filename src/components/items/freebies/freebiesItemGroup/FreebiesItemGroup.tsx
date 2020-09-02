@@ -18,7 +18,7 @@ export class FreebiesItemGroup extends React.Component<IFreebieItemProps, IFreeb
   }
 
   render() {
-    return <div className="freebies-container">
+    return <div className="main--flex">
       {this.props.items && this.props.items.data &&
         this.props.items.data.map((item: IItemGroup) => 
           <FreebiesItem key={`${item.variations[0].variant}-${item.variations[0].name}`} diyItemGroup={item} />)

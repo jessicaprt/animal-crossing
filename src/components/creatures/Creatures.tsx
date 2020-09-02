@@ -80,8 +80,6 @@ export class Creatures extends CreaturesManager {
       _allCreatures.push(_newCreature);
     });
 
-    console.log(_allCreatures);
-
     return _allCreatures;
   } 
 
@@ -148,9 +146,9 @@ export class Creatures extends CreaturesManager {
     return (
       <div className="background-main padded-6y creatures-wrapper">
         <Container>
-          <div className="app-title-container">
+          <div className="main-title-container">
             <PageTitle pageTitle="Creatures" backLink="/" backLinkDisplay="Home" />
-            <div className="app-title-button-wrapper">
+            <div className="main-title-button-wrapper">
             <Tooltip title="Feature will be available soon" aria-label="add">
               <div>
                 <Button variant="contained" disabled>

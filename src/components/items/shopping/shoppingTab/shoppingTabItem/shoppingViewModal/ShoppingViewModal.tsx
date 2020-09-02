@@ -23,8 +23,8 @@ export class ShoppingViewModal extends React.Component<IShoppingViewModalProps, 
     const _hha2: string = _item.hhaConcept2 ? `, ${_item.hhaConcept2}` : '';
 
     return(
-      <div className="item-view-modal-container app-modal-container padded-4y padded-2x font-color-dark">
-        <div className="app-details-close-button" onClick={this.props.closeAction}>
+      <div className="item-view-modal-container main-modal-container padded-4y padded-2x font-color-dark">
+        <div className="main-details-close-button" onClick={this.props.closeAction}>
           <CloseIcon/>
         </div>
         <h2 className="font-color-dark item-view-modal-title">{_item.name}</h2>
@@ -47,7 +47,7 @@ export class ShoppingViewModal extends React.Component<IShoppingViewModalProps, 
           </table>
         </div>
 
-        <Button className="app-button" variant="contained" disableElevation onClick={this.props.closeAction}>
+        <Button className="main-button" variant="contained" disableElevation onClick={this.props.closeAction}>
           <CloseIcon style={{marginRight: '5px'}}/> Close
         </Button>
       </div>

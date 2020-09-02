@@ -38,7 +38,6 @@ export class Shopping extends ItemsManager {
       const items: IRenderedItem = this.renderItems(housewares);
       this._changeState('allHousewareItems', items.allItems);
       this._changeState('pagedHousewareItems', items.pagedItems);
-      console.log(items.allItems);
     });
 
     this._getAllWallmountedItems().then((wallmounted: any) => {
@@ -135,7 +134,7 @@ export class Shopping extends ItemsManager {
     return (
       <div className="background-main padded-6y item-wrapper">
         <Container>
-          <div className="app-title-container">
+          <div className="main-title-container">
             <PageTitle pageTitle="Shopping" backLink="/" backLinkDisplay="Home" />
           </div>
           <div className="padded-2y padded-4x item-container main-section">

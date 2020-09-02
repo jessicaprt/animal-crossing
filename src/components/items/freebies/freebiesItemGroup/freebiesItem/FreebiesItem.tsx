@@ -100,13 +100,13 @@ export class FreebiesItem extends React.Component<IFreebiesItemProps, IFreebiesI
         </Menu> }
 
         <Modal open={_viewModal} onClose={this.closeViewModal}>
-          <div className="app-modal-wrapper">
+          <div className="main-modal-wrapper">
             <FreebiesViewModal item={_item} closeAction={this.closeViewModal} />
           </div>
         </Modal>
 
         <Modal open={_customizeModal} onClose={this.closeCustomizeModal}>
-          <div className="app-modal-wrapper">
+          <div className="main-modal-wrapper">
             <FreebiesCustomizeModal itemGroup={_itemGroup} closeAction={this.closeCustomizeModal} />
           </div>
         </Modal>

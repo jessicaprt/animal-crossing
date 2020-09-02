@@ -101,13 +101,13 @@ export class DiyTabItem extends React.Component<IDiyTabItemProps, IDiyTabItemSta
         </Menu> }
 
         <Modal open={_viewModal} onClose={this.closeViewModal}>
-          <div className="app-modal-wrapper">
+          <div className="main-modal-wrapper">
             <ViewModal item={_item} closeAction={this.closeViewModal} />
           </div>
         </Modal>
 
         <Modal open={_customizeModal} onClose={this.closeCustomizeModal}>
-          <div className="app-modal-wrapper">
+          <div className="main-modal-wrapper">
             <CustomizeModal itemGroup={_itemGroup} closeAction={this.closeCustomizeModal} />
           </div>
         </Modal>

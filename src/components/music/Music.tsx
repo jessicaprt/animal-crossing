@@ -130,10 +130,10 @@ export class Music extends MusicManager {
     return (
       <div className="music-wrapper background-main padded-6y">
         <Container>
-          <div className="app-title-container">
+          <div className="main-title-container">
             <PageTitle pageTitle="Music" backLink="/" backLinkDisplay="Home" />
-            <div className="app-search-wrapper">
-              <div className="app-search-icon"><SearchIcon fontSize="large" /></div>
+            <div className="main-search-wrapper">
+              <div className="main-search-icon"><SearchIcon fontSize="large" /></div>
               <TextField id="outlined-basic" label="Search Song" variant="outlined" onChange={event => this.textSearch(event.target.value)} /> 
             </div>
           </div>

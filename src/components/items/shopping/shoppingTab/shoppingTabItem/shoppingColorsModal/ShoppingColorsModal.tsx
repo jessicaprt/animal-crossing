@@ -26,8 +26,8 @@ export class ShoppingColorsModal extends React.Component<IShoppingColorsModalPro
     const _itemGroup: IItemGroup = this.props.itemGroup;
 
     return(
-      <div className="item-customize-modal-container app-modal-container padded-4y padded-2x font-color-dark">
-        <div className="app-details-close-button" onClick={this.props.closeAction}>
+      <div className="item-customize-modal-container main-modal-container padded-4y padded-2x font-color-dark">
+        <div className="main-details-close-button" onClick={this.props.closeAction}>
           <CloseIcon/>
         </div>
 
@@ -35,7 +35,7 @@ export class ShoppingColorsModal extends React.Component<IShoppingColorsModalPro
           {_itemGroup.variations.map((_item: IItem) => <CustomItem imageUri={_item.imageUri} label={_item.variant} />)}
         </div>
 
-        <Button className="app-button" variant="contained" disableElevation onClick={this.props.closeAction}>
+        <Button className="main-button" variant="contained" disableElevation onClick={this.props.closeAction}>
           <CloseIcon style={{marginRight: '5px'}}/> Close
         </Button>
       </div>

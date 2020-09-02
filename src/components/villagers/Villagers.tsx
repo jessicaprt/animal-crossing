@@ -283,10 +283,10 @@ export class Villagers extends VillagersManager {
     return (
       <div className="background-main padded-6y villagers-wrapper">
         <Container>
-          <div className="app-title-container">
+          <div className="main-title-container">
             <PageTitle pageTitle="Villagers" backLink="/" backLinkDisplay="Home" />
-            <div className="app-search-wrapper">
-              <div className="app-search-icon"><SearchIcon fontSize="large" /></div>
+            <div className="main-search-wrapper">
+              <div className="main-search-icon"><SearchIcon fontSize="large" /></div>
               <TextField id="outlined-basic" label="Search Villager" variant="outlined" onChange={event => this.textSearchChange(event.target.value)} /> 
             </div>
           </div>
@@ -331,7 +331,7 @@ export class Villagers extends VillagersManager {
           </div>
         </Container>
         <Modal open={_modalOpen} onClose={this.closeVillagerModal}>
-          <div className="app-modal-wrapper">
+          <div className="main-modal-wrapper">
             <VillagerDetails villager={this.state.data.currentVillager} closeAction={this.closeVillagerModal}/>
           </div>
         </Modal>

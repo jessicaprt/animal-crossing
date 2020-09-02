@@ -137,10 +137,10 @@ export class Diy extends ItemsManager {
     return (
       <div className="background-main padded-6y item-wrapper">
         <Container>
-          <div className="app-title-container">
+          <div className="main-title-container">
             <PageTitle pageTitle="DIY Items" backLink="/" backLinkDisplay="Home" />
-            <div className="app-search-wrapper">
-              {/* <div className="app-search-icon"><SearchIcon fontSize="large" /></div>
+            <div className="main-search-wrapper">
+              {/* <div className="main-search-icon"><SearchIcon fontSize="large" /></div>
               <TextField id="outlined-basic" label="Search Villager" variant="outlined" onChange={event => this.textSearchChange(event.target.value)} />  */}
             </div>
           </div>

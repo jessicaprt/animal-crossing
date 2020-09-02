@@ -67,13 +67,13 @@ export class Homepage extends React.Component<{}, {time: string}> {
         id: 'homepage-icon--6',
         name: "Freebies and Redeemable",
         imageUrl: "freebies_icon.png",
-        link: '/'
+        link: '/freebies-redeemable'
       },
       {
         id: 'homepage-icon--7',
         name: "Art",
         imageUrl: "art_icon.png",
-        link: '/'
+        link: '/art'
       },
       {
         id: 'homepage-icon--8',

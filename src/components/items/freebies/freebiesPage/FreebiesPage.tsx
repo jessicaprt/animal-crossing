@@ -38,10 +38,10 @@ export class FreebiesPage extends FreebiesManager {
       <div className="background-main padded-6y item-wrapper">
         <Container>
           {this.state.data.loaded 
-            ? <div className="app-title-container">
+            ? <div className="main-title-container">
               <PageTitle pageTitle={_title} backLink={_backLink.link} backLinkDisplay={_backLink.display} />
             </div>
-            : <div className="app-title-container">
+            : <div className="main-title-container">
               <div className="padded-2y">
                 <div className="padded-2y">
                   <Skeleton variant="rect" width={200} height={14} />
