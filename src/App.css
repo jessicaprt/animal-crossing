@@ -123,6 +123,14 @@ body,
   color: #938979 !important;
 }
 
+
+.app-chip-item {
+  margin-right: 5px;
+  background-color: #bd7ce1 !important;
+  color: #fff !important;
+  font-family: 'Dosis', sans-serif !important;
+}
+
 @media (max-width: 600px) { 
   .main-modal-container {
     max-width: 300px;

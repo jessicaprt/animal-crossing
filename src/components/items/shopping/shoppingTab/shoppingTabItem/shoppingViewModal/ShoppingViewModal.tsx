@@ -34,8 +34,8 @@ export class ShoppingViewModal extends React.Component<IShoppingViewModalProps, 
 
         <div className="item-view-modal-details padded-2y padded-2x">
           <div className="item-view-chip-list padded-2y">
-            {_item.isOutdoor && <Chip className="item-view-chip-item" size="small" label="Outdoor" />}
-            {_item.isInteractive && <Chip className="item-view-chip-item" size="small" label="Interactive" />}
+            {_item.isOutdoor && <Chip className="app-chip-item" size="small" label="Outdoor" />}
+            {_item.isInteractive && <Chip className="app-chip-item" size="small" label="Interactive" />}
           </div>
           <table>
             <tbody>

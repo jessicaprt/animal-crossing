@@ -1,8 +1,11 @@
 import React from 'react';
 import './ArtItem.css';
+
 import { IArt } from '../IArt';
+import { Modal } from '@material-ui/core';
 
 import Skeleton from '@material-ui/lab/Skeleton';
+import { ArtModal } from '../art-modal/ArtModal';
 
 interface IArtItemProps {
   art: IArt;
@@ -18,13 +21,21 @@ export class ArtItem extends React.Component<IArtItemProps, IArtItemState> {
     this.state = {
       imageLoaded: false
     }
-    this.onImageLoad = this.onImageLoad.bind(this);
-  } 
 
+    this.onImageLoad = this.onImageLoad.bind(this);
+  }
+
+  _changeState(key: string, value: any) {
+    let currentState:IArtItemState = this.state;
+    currentState[key] = value;
+    this.setState(currentState);
+  }
+
+  /**
+   * handles when images are loaded
+   */
   onImageLoad() {
-    this.setState({
-      imageLoaded: true
-    });
+    this._changeState('imageLoaded', true);
   }
 
   render() {
