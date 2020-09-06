@@ -50,7 +50,6 @@ export class FossilItem extends React.Component<IFossilItemProps, IFossilItemSta
 
     return (
       <div className="fossil-item-container font-color-dark">
-        {!_imageLoaded && <Skeleton height={128} width={128}/>}
         <div className="fossil-item-image">
           <div className="holder-image">
             <img src="/assets/fossil/fossil-holder.png" alt="holder" />
