@@ -12,6 +12,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import './Villagers.css';
 import { VillagerDetails } from './villager-details/VillagerDetails';
 import { IVillageFilters, IVillageFiltersSelection } from './villager-filters/IVillageFilters';
+import { LoadingState } from '../shared/loading-state/LoadingState';
 
 const FilterChip = ({filter, filterLabel}) => {
   if (filter === 'all') {
@@ -48,7 +49,8 @@ export class Villagers extends VillagersManager {
         allGender: [],
         allSpecies: [],
         textFilter: '',
-        radioFilters: _emptyRadioFilters
+        radioFilters: _emptyRadioFilters,
+        pageLoaded: false
       }
     }
 
@@ -64,6 +66,7 @@ export class Villagers extends VillagersManager {
   }
 
   componentDidMount() {
+    this._isMounted = true;
     const _allVillagers: IVillager[] = [];
     const _allPersonalities: string[] = [];
     const _allHobbies: string[] = [];
@@ -95,12 +98,15 @@ export class Villagers extends VillagersManager {
         }
       });
 
-      this._changeState('allVillagers', _allVillagers);
-      this._changeState('filteredVillagers', _allVillagers);
-      this._changeState('allPersonalities', _allPersonalities);
-      this._changeState('allHobbies', _allHobbies);
-      this._changeState('allGender', _allGender);
-      this._changeState('allSpecies', _allSpecies);
+      if (this._isMounted) {
+        this._changeState('allVillagers', _allVillagers);
+        this._changeState('filteredVillagers', _allVillagers);
+        this._changeState('allPersonalities', _allPersonalities);
+        this._changeState('allHobbies', _allHobbies);
+        this._changeState('allGender', _allGender);
+        this._changeState('allSpecies', _allSpecies);
+        this._changeState('pageLoaded', true);
+      }
     });
   }
 
@@ -302,33 +308,39 @@ export class Villagers extends VillagersManager {
               <VillagerFilters onFilterSelecionChange={this.filterSelectionChange} availableFilters={_availableFilters}/>
             </AccordionDetails>
           </Accordion>
-          <div>
-            {
-              this.state.data.filteredVillagers ? 
-              <div>
-                <div className="padded-2y">
-                  {this.showFilterLabel() ? <p className="font-color-dark">Filtered by:</p> : null}
-                  {_selectedFilter ? <div className="villager-chip-list">
-                    <FilterChip filter={_selectedFilter.gender} filterLabel="Gender" />
-                    <FilterChip filter={_selectedFilter.hobby} filterLabel="Hobby" />
-                    <FilterChip filter={_selectedFilter.personality} filterLabel="Personality" />
-                    <FilterChip filter={_selectedFilter.species} filterLabel="Species" />
-                  </div> : null}
+          {
+          this.state.data.pageLoaded ?
+            <div>
+              {
+                this.state.data.filteredVillagers &&
+                <div>
+                  <div className="padded-2y">
+                    {this.showFilterLabel() ? <p className="font-color-dark">Filtered by:</p> : null}
+                    {_selectedFilter ? <div className="villager-chip-list">
+                      <FilterChip filter={_selectedFilter.gender} filterLabel="Gender" />
+                      <FilterChip filter={_selectedFilter.hobby} filterLabel="Hobby" />
+                      <FilterChip filter={_selectedFilter.personality} filterLabel="Personality" />
+                      <FilterChip filter={_selectedFilter.species} filterLabel="Species" />
+                    </div> : null}
+                  </div>
+                  <p className="font-color-dark">Showing {this.state.data.filteredVillagers.length} out of {this.state.data.allVillagers.length}</p>
+                  <div className="villagers-container main-section">
+                    {this.state.data.filteredVillagers.map(
+                      (villager: IVillager) => 
+                        <div key={villager.id} onClick={() => {this.openVillagerModal(villager)}}>
+                          <VillagerItem villager={villager} />
+                        </div>
+                      ) 
+                    }
+                  </div> 
                 </div>
-                <p className="font-color-dark">Showing {this.state.data.filteredVillagers.length} out of {this.state.data.allVillagers.length}</p>
-                <div className="villagers-container main-section">
-                  {this.state.data.filteredVillagers.map(
-                    (villager: IVillager) => 
-                      <div key={villager.id} onClick={() => {this.openVillagerModal(villager)}}>
-                        <VillagerItem villager={villager} />
-                      </div>
-                    ) 
-                  }
-                </div> 
-              </div>
-              : null
+              }
+            </div>
+            : 
+            <div className="villagers-container main-section">
+              <LoadingState />
+            </div> 
             }
-          </div>
         </Container>
         <Modal open={_modalOpen} onClose={this.closeVillagerModal}>
           <div className="main-modal-wrapper">

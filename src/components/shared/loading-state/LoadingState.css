@@ -1,0 +1,12 @@
+.loading-wrapper {
+}
+
+.loading-skeleton {
+  text-align: center;
+  margin: 5px;
+}
+
+.loading-skeleton {
+  width: 140px;
+  height: 140px;
+}

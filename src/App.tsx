@@ -12,6 +12,7 @@ import { Shopping } from './components/items/shopping/Shopping';
 import { FreebiesPage } from './components/items/freebies/freebiesPage/FreebiesPage';
 import { FreebiesAll } from './components/items/freebies/freebiesAll/FreebiesAll';
 import { Art } from './components/art/Art';
+import { Fossils } from './components/fossils/Fossils';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/freebies/:freebie_id" component={FreebiesPage} />
         <Route path="/freebies-redeemable" component={FreebiesAll} />
         <Route path="/art" component={Art} />
+        <Route path="/fossils" component={Fossils} />
       </div>
     </HashRouter>
   );

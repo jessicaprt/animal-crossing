@@ -41,8 +41,8 @@ export class Music extends MusicManager {
   }
 
   componentDidMount() {
+    this._isMounted = true;
     this._getAllSongs().then((songs: any) => {
-      this._isMounted = true;
       this.renderAllSongs(songs);
     });
 
@@ -104,8 +104,10 @@ export class Music extends MusicManager {
       _allSongs.push(_newSong);
     });
 
-    this._changeState('allSongs', _allSongs);
-    this._changeState('filteredSongs', _allSongs);
+    if (this._isMounted) {
+      this._changeState('allSongs', _allSongs);
+      this._changeState('filteredSongs', _allSongs);
+    }
   }
 
   /**

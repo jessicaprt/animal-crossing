@@ -7,20 +7,26 @@ import { PageTitle } from '../shared/page-title/PageTitle';
 import { IArt } from './IArt';
 import { ArtItem } from './art-item/ArtItem';
 import { ArtModal } from './art-modal/ArtModal';
+import { LoadingState } from '../shared/loading-state/LoadingState';
 
 export class Art extends ArtManager {
   PAINTING = 'painting';
   STATUE = 'statue';
 
+  /** if component is mounted */
+  private _isMounted: boolean;
+
   constructor(props) {
     super(props);
+    this._isMounted = false;
 
     this.state = {
       data: {
         allPaintings: [],
         allStatues: [],
         isModalOpen: false,
-        currentArt: null
+        currentArt: null,
+        pageLoaded: false
       }
     }
 
@@ -29,30 +35,31 @@ export class Art extends ArtManager {
   }
 
   componentDidMount() {
+    this._isMounted = true;
     this._getAllArt().then((artItems: any) => {
       this.renderArtItems(artItems);
     });
   }
 
-    /**
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
+  /**
    * opens the modal
    * @param art 
    */
   openModal(art: IArt) {
-    console.log('opening');
     this._changeState('isModalOpen', true);
     this._changeState('currentArt', art);
-    console.log(this.state.data.isModalOpen);
   }
 
   /**
    * closes the modal
    */
   closeModal() {
-    console.log('closing');
     this._changeState('isModalOpen', false);
     this._changeState('currentArt', null);
-    console.log(this.state.data.isModalOpen);
   }
 
   /**
@@ -89,8 +96,11 @@ export class Art extends ArtManager {
 
     });
 
-    this._changeState('allPaintings', _allPaintings);
-    this._changeState('allStatues', _allStatues);
+    if (this._isMounted) {
+      this._changeState('allPaintings', _allPaintings);
+      this._changeState('allStatues', _allStatues);
+      this._changeState('pageLoaded', true);
+    }
   }
 
   render() {
@@ -106,32 +116,38 @@ export class Art extends ArtManager {
           
           <div className="padded-2y padded-4x item-container main-section ">
             <h1 className="font-color-dark art-section-title">Paintings</h1>
-            <div className="main--flex">
-              {_allPaintings &&
-                _allPaintings.map((art: IArt) => {
-                  return (
-                    <div key={art.id} onClick={() => this.openModal(art)}>
-                      <ArtItem art={art}/>
-                    </div>
-                  )
-                })
-              }
-            </div>
+            { this.state.data.pageLoaded
+              ? <div className="main--flex">
+                  {_allPaintings &&
+                    _allPaintings.map((art: IArt) => {
+                      return (
+                        <div key={art.id} onClick={() => this.openModal(art)}>
+                          <ArtItem art={art}/>
+                        </div>
+                      )
+                    })
+                  }
+                </div>
+              : <LoadingState />
+            }
           </div>
 
           <div className="padded-2y padded-4x item-container main-section ">
             <h1 className="font-color-dark art-section-title">Statues</h1>
-            <div className="main--flex">
-              {_allStatues &&
-                _allStatues.map((art: IArt) => {
-                  return (
-                    <div key={art.id} onClick={() => this.openModal(art)}>
-                      <ArtItem art={art}/>
-                    </div>
-                  )
-                })
-              }
-            </div>
+            { this.state.data.pageLoaded
+              ? <div className="main--flex">
+                {_allStatues &&
+                  _allStatues.map((art: IArt) => {
+                    return (
+                      <div key={art.id} onClick={() => this.openModal(art)}>
+                        <ArtItem art={art}/>
+                      </div>
+                    )
+                  })
+                }
+              </div>
+              : <LoadingState />
+            }
           </div>
         </Container>
 

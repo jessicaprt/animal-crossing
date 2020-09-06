@@ -79,7 +79,7 @@ export class Homepage extends React.Component<{}, {time: string}> {
         id: 'homepage-icon--8',
         name: "Fossils",
         imageUrl: "fossil_icon.png",
-        link: '/'
+        link: '/fossils'
       },
       {
         id: 'homepage-icon--9',

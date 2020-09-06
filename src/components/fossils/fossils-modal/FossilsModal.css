@@ -1,0 +1,29 @@
+.fossils-modal-name {
+  text-align: center;
+}
+
+.fossils-modal-image-container {
+  text-align: center;
+  width: 100%;
+}
+
+.fossils-modal-title {
+  margin: 10px auto;
+  width: fit-content;
+  padding: 10px;
+  border: 1px solid;
+}
+
+.fossils-modal-details-container {
+  border-top: 3px solid #eee;
+  border-bottom: 3px solid #eee;
+  margin-top: 30px;
+}
+
+.fossils-modal-museum-details-container {
+  border-bottom: 3px solid #eee;
+}
+
+.fossils-detail-col {
+  padding-right: 20px
+}

@@ -1,0 +1,41 @@
+.fossil-item-container {
+  text-align: center;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.holder-image {
+  position: absolute;
+  width: 128px;
+  height: 128px;
+  background-color: #fff;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.fossil-item-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.fossil-item-image >
+.holder-image {
+  transition: transform 0.2s;
+  transform: translateY(0px);
+}
+
+.fossil-item-image:hover >
+.holder-image {
+  transform: translateY(128px);
+}
+
+.fossil-item-image-container {
+  height: 128px;
+  width: 128px;
+}
+
+.holder-image img {
+  width: 100px;
+  height: 100px;
+}
