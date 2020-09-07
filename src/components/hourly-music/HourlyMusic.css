@@ -1,0 +1,110 @@
+.hm-clock-selector {
+  position: relative;
+  /* min-height: 300px; */
+}
+
+.hm-circle,
+.hm-ring {
+  height: 256px;
+  position: relative;
+  width: 256px;
+}
+
+.hm-circle {
+  margin: 0 auto;
+}
+
+.hm-ring {
+  background-color: #9de3c76b;
+  border-radius: 50%;
+  opacity: 0;
+
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+
+  -webkit-transform: scale(0.1) rotate(-270deg);
+  -moz-transform: scale(0.1) rotate(-270deg);
+  -transform: scale(0.1) rotate(-270deg);
+
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+.hm-open .hm-ring {
+  opacity: 1;
+  
+  -webkit-transform: scale(1) rotate(0);
+  -moz-transform: scale(1) rotate(0);
+  transform: scale(1) rotate(0);
+}
+
+.hm-center {
+  cursor: pointer;
+  background-color: #9de3c7;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  bottom: 0;
+  color: #fff;
+  height: 80px;
+  left: 0;
+  line-height: 80px;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 80px;
+  
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hm-menu-item {
+  font-size: 14px;
+  text-decoration: none;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  color: #888;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  margin-left: -20px;
+  margin-top: -20px;
+  position: absolute;
+  text-align: center;
+  width: 40px;
+}
+
+.hm-hour-selected {
+  color: #8dd6e0;
+  font-size: 20px;
+}
+
+.hm-time-selection,
+.hm-time-selection,
+.hm-meridiem-selection {
+  width: 100%;
+  text-align: center;
+}
+
+.hm-meridiem-selected,
+.hm-weather-selected {
+  background-color: #8dd6e0 !important;
+  color: white !important;
+}
+
+.hm-weather-button-wrapper {
+  padding: 5px 0;
+}
+
+.hm-meridiem-button {
+  margin: 0 5px !important;
+}

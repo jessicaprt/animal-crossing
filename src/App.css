@@ -127,6 +127,9 @@ body,
   color: #938979 !important;
 }
 
+.MuiButton-label {
+  font-family: 'Dosis', sans-serif !important;
+}
 
 .app-chip-item {
   margin-right: 5px;

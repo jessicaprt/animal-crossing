@@ -13,6 +13,7 @@ import { FreebiesPage } from './components/items/freebies/freebiesPage/FreebiesP
 import { FreebiesAll } from './components/items/freebies/freebiesAll/FreebiesAll';
 import { Art } from './components/art/Art';
 import { Fossils } from './components/fossils/Fossils';
+import { HourlyMusic } from './components/hourly-music/HourlyMusic';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/freebies-redeemable" component={FreebiesAll} />
         <Route path="/art" component={Art} />
         <Route path="/fossils" component={Fossils} />
+        <Route path="/hourly-music" component={HourlyMusic} />
       </div>
     </HashRouter>
   );
