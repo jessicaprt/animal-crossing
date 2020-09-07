@@ -155,7 +155,11 @@ export class HourlyMusic extends HourlyMusicManager {
       if (_currentHourlyMusic) {
         const _weatherSelections: string[] = _currentHourlyMusic.variations.map((v: IWeatherMusic) => v.weather);
         this._changeState('allWeatherOptions', _weatherSelections);
-        this._changeState('weatherSelected', _weatherSelections[0]);
+        if (_weatherSelections.includes(this.SUNNY)) {
+          this._changeState('weatherSelected', this.SUNNY);
+        } else {
+          this._changeState('weatherSelected', _weatherSelections[0]);
+        }
       } else {
         console.error('cannot get weather options');
       }
