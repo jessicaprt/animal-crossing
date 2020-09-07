@@ -19,11 +19,11 @@ const FishDetail = ({label, value}) => {
   );
 };
 
-const Months = ({month}) => {
+const Months = ({month, chipClass}) => {
   const monthsArr: string[] = month;
   return (
     <div>
-      {monthsArr.map((mo: string) => <Chip className="creature-detail-chip" key={mo} label={mo} /> )} 
+      {monthsArr.map((mo: string) => <Chip className={`creature-detail-chip ${chipClass}`} key={mo} label={mo} /> )} 
     </div>
   )
 }
@@ -72,8 +72,8 @@ export class CreatureDetails extends React.Component<ICreatureDetailsProps, {}> 
             <div className="creature-details-main padded-2x padded-2y">
               <table>
                 <tbody>
-                  <FishDetail label="Months (N)" value={<Months month={this.props.fish?.monthsAvailable_northern} />} />
-                  <FishDetail label="Months (S)" value={<Months month={this.props.fish?.monthsAvailable_southern} />} />
+                  <FishDetail label="Months (N)" value={<Months month={this.props.fish?.monthsAvailable_northern} chipClass="background-blue font-color-white" />} />
+                  <FishDetail label="Months (S)" value={<Months month={this.props.fish?.monthsAvailable_southern} chipClass="background-green font-color-white" />} />
                 </tbody>
               </table>
             </div>

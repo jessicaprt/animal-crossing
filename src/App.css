@@ -4,15 +4,15 @@ body,
 }
 
 .font-color-dark {
-  color: #938979;
+  color: #938979 !important;
 }
 
 .font-color-light {
-  color: #dfd9c6
+  color: #dfd9c6 !important;
 }
 
 .font-color-white {
-  color: #fff;
+  color: #fff !important;
 }
 
 .background-main {
@@ -113,8 +113,8 @@ body,
 }
 
 .main-button {
-  background-color: #938979 !important;
-  color: #dfd9c6 !important;
+  background-color: #8dd6e0 !important;
+  color: #fff !important;
   font-family: 'Dosis', sans-serif !important;
 }
 
@@ -151,6 +151,10 @@ body,
 .MuiFormLabel-root.Mui-focused,
 .MuiTab-textColorPrimary.Mui-selected {
   color: #8dd6e0 !important;
+}
+
+.MuiChip-label {
+  font-family: 'Dosis', sans-serif !important;
 }
 
 .PrivateTabIndicator-colorPrimary-2 {
