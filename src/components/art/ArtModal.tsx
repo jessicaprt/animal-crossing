@@ -54,8 +54,8 @@ export class ArtModal extends React.Component<IArtModalProps, IArtModalState> {
         </div>
         <div className="art-modal-details-container padded-2y padded-2x">
           {_art.hasFake
-            ? <Chip className="app-chip-item" size="small" label="has fake" /> 
-            : <Chip className="app-chip-item" size="small" label="always real" />}
+            ? <Chip className="app-chip-item background-green" size="small" label="has fake" /> 
+            : <Chip className="app-chip-item background-blue" size="small" label="always real" />}
 
           <table>
             <tbody>

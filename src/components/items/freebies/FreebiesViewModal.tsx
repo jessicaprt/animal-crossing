@@ -35,8 +35,8 @@ export class FreebiesViewModal extends React.Component<IFreebiesViewModalProps, 
 
         <div className="item-view-modal-details padded-2y padded-2x">
           <div className="item-view-chip-list padded-2y">
-            {_item.isOutdoor && <Chip className="app-chip-item" size="small" label="Outdoor" />}
-            {_item.isInteractive && <Chip className="app-chip-item" size="small" label="Interactive" />}
+            {_item.isOutdoor && <Chip className="app-chip-item background-green" size="small" label="Outdoor" />}
+            {_item.isInteractive && <Chip className="app-chip-item background-blue" size="small" label="Interactive" />}
           </div>
           <table>
             <tbody>

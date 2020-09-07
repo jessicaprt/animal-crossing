@@ -54,6 +54,7 @@
 
 .item-bells {
   padding-right: 5px;
+  transform: translateY(2px);
 }
 
 
