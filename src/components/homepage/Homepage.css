@@ -44,3 +44,17 @@ a {
 .homepage-item-image img {
   width: 90%;
 }
+
+.homepage-logo-container {
+  text-align: center;
+}
+
+.homepage-logo-container img {
+  max-height: 150px;
+}
+
+@media (max-width: 600px) { 
+  .homepage-logo-container img {
+    max-height: 100px;
+  }
+}
