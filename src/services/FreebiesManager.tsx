@@ -3,41 +3,6 @@ import React from 'react';
 import { IFreebieGroup, IItem, IItemGroup } from '../models/IItem';
 import { ItemsManager } from './ItemsManager';
 
-import Skeleton from '@material-ui/lab/Skeleton';
-
-export const FreebiesSkeleton = () => {
-  return (
-    <div className="freebies-all-wrapper padded-4y padded-2x">
-      <div className="freebies-all-item-skeleton">
-        <Skeleton variant="rect" width={140} height={140} />
-      </div>
-      <div className="freebies-all-item-skeleton">
-        <Skeleton variant="rect" width={140} height={140} />
-      </div>
-      <div className="freebies-all-item-skeleton">
-        <Skeleton variant="rect" width={140} height={140} />
-      </div>
-      <div className="freebies-all-item-skeleton">
-        <Skeleton variant="rect" width={140} height={140} />
-      </div>
-      <div className="freebies-all-item-skeleton">
-        <Skeleton variant="rect" width={140} height={140} />
-      </div>
-      <div className="freebies-all-item-skeleton">
-        <Skeleton variant="rect" width={140} height={140} />
-      </div>
-      <div className="freebies-all-item-skeleton">
-        <Skeleton variant="rect" width={140} height={140} />
-      </div>
-      <div className="freebies-all-item-skeleton">
-        <Skeleton variant="rect" width={140} height={140} />
-      </div>
-      <div className="freebies-all-item-skeleton">
-        <Skeleton variant="rect" width={140} height={140} />
-      </div>
-    </div>
-  );
-}
 
 export class FreebiesManager extends ItemsManager {
   constructor(props) {

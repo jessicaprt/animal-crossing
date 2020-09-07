@@ -46,6 +46,8 @@ export class Fossils extends FossilsManager {
     this._isMounted = false;
   }
 
+  
+
   /**
    * opens the modal
    * @param art 

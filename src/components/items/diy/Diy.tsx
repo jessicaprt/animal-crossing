@@ -17,8 +17,13 @@ interface IRenderedItem {
 }
 
 export class Diy extends ItemsManager {
+  /** if component is mounted */
+  _isMounted: boolean;
+
   constructor(props) {
     super(props);
+
+    this._isMounted = false;
     this.state = {
       data: {
         activeTab: 0,
@@ -35,24 +40,37 @@ export class Diy extends ItemsManager {
   }
 
   componentDidMount() {
+    this._isMounted = true;
     this._getAllHousewareItems().then((housewares: any) => {
       const items: IRenderedItem = this.renderItems(housewares);
-      this._changeState('allHousewareItems', items.allItems);
-      this._changeState('pagedHousewareItems', items.pagedItems);
+      if (this._isMounted) {
+        this._changeState('allHousewareItems', items.allItems);
+        this._changeState('pagedHousewareItems', items.pagedItems);
+      }
     });
 
     this._getAllWallmountedItems().then((wallmounted: any) => {
       const items: IRenderedItem = this.renderItems(wallmounted);
-      this._changeState('allWallmountedItems', items.allItems);
-      this._changeState('pagedWallmountedItems', items.pagedItems);
+      if (this._isMounted) {
+        this._changeState('allWallmountedItems', items.allItems);
+        this._changeState('pagedWallmountedItems', items.pagedItems);
+      }
     });
 
     this._getAllMiscItems().then((misc: any) => {
       const items: IRenderedItem = this.renderItems(misc);
-      this._changeState('allMiscItems', items.allItems);
-      this._changeState('pagedMiscItems', items.pagedItems);
+      if (this._isMounted) {
+        this._changeState('allMiscItems', items.allItems);
+        this._changeState('pagedMiscItems', items.pagedItems);
+      }
     });
   }
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
+
 
   /**
    * handles the tab change and sets the active tab

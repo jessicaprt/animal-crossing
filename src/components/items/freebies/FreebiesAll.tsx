@@ -6,7 +6,7 @@ import { IFreebieGroup } from '../../../models/IItem';
 import { Link } from "react-router-dom"; 
 import { PageTitle } from '../../shared/page-title/PageTitle';
 import { Container } from '@material-ui/core';
-import { FreebiesManager, FreebiesSkeleton } from '../../../services/FreebiesManager';
+import { FreebiesManager } from '../../../services/FreebiesManager';
 import { LoadingState } from '../../shared/loading-state/LoadingState';
 
 export class FreebiesAll extends FreebiesManager {

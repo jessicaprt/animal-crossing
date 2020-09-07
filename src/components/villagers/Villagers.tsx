@@ -75,7 +75,7 @@ export class Villagers extends VillagersManager {
     this._getAllVillagers().then((villagers: any) => {
       this._isMounted = true;
       villagers.forEach((villager: any) => {
-        const _newVillager: IVillager = this.renderVillager(villager)
+        const _newVillager: IVillager = this._renderVillager(villager)
 
         _allVillagers.push(_newVillager);
 
@@ -124,28 +124,6 @@ export class Villagers extends VillagersManager {
   closeVillagerModal() {
     const currentState = this.state.data;
     this._changeState('modalOpen', false);
-  }
-
-  /**
-   * 
-   * @param villager 
-   */
-  renderVillager(villager: any): IVillager {
-    return {
-      id: villager['id'],
-      name: villager['name']['name-USen'],
-      personality: villager['personality'],
-      birthday: villager['birthday-string'],
-      species: villager['species'],
-      gender: villager['gender'],
-      hobby: villager['hobby'],
-      catchphrase: villager['catch-phrase'],
-      imageUri: villager['image_uri'],
-      iconUri: villager['icon_uri'],
-      saying: villager['saying'],
-      bubbleColor: villager['bubble-color'],
-      textColor: villager['text-color']
-    }
   }
 
   /**

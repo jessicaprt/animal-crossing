@@ -3,10 +3,11 @@ import React from 'react';
 import { Container } from '@material-ui/core';
 import { PageTitle } from '../../shared/page-title/PageTitle';
 import { FreebiesItemGroup } from './FreebiesItemGroup';
-import { FreebiesManager, FreebiesSkeleton } from '../../../services/FreebiesManager';
+import { FreebiesManager } from '../../../services/FreebiesManager';
+import { LoadingState } from '../../shared/loading-state/LoadingState';
+
 
 import Skeleton from '@material-ui/lab/Skeleton';
-
 export class FreebiesPage extends FreebiesManager {
   constructor(props) {
     super(props);
@@ -54,7 +55,7 @@ export class FreebiesPage extends FreebiesManager {
           <div className="padded-2y padded-4x item-container main-section">
             {this.state.data.loaded 
               ? <FreebiesItemGroup items={_selectedItemData} />
-              : <FreebiesSkeleton />
+              : <LoadingState />
             }
           </div>
         </Container>

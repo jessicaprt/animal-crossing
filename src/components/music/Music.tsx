@@ -42,7 +42,11 @@ export class Music extends MusicManager {
   componentDidMount() {
     this._isMounted = true;
     this._getAllSongs().then((songs: any) => {
-      this.renderAllSongs(songs);
+      const _allSongs = this._renderAllSongs(songs);
+      if (this._isMounted) {
+        this._changeState('allSongs', _allSongs);
+        this._changeState('filteredSongs', _allSongs);
+      }
     });
 
     window.addEventListener('scroll', this.handleScroll);
@@ -85,29 +89,7 @@ export class Music extends MusicManager {
     }
   }
 
-  /**
-   * map response data to what's needed by the view
-   * @param songs 
-   */
-  renderAllSongs(songs: any) {
-    const _allSongs:IMusic[] = [];
-    
-    songs.forEach((song: string) => {
-      const _newSong: IMusic = {
-        name: song['name']['name-USen'],
-        id: song['id'],
-        imageUri: song['image_uri'],
-        musicUri: song['music_uri']
-      }
-
-      _allSongs.push(_newSong);
-    });
-
-    if (this._isMounted) {
-      this._changeState('allSongs', _allSongs);
-      this._changeState('filteredSongs', _allSongs);
-    }
-  }
+  
 
   /**
    * listens to changes to the search input
