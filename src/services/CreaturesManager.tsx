@@ -1,4 +1,4 @@
-import { Base } from "../../utils/base/Base";
+import { Base } from "../utils/base/Base";
 
 export class CreaturesManager extends Base {
   /**

@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { ICreature } from '../ICreature';
+import { ICreature } from '../../models/ICreature';
 import { Grid, Chip, Button } from '@material-ui/core';
 
 import CloseIcon from '@material-ui/icons/Close';
-
-import './CreatureDetails.css';
 
 interface ICreatureDetailsProps {
   fish: ICreature | null;

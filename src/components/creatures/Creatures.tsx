@@ -1,11 +1,10 @@
 import React from 'react';
 
-import { CreaturesManager } from './CreaturesManager';
+import { CreaturesManager } from '../../services/CreaturesManager';
 import { Container, Tabs, Tab, Button, Tooltip } from '@material-ui/core';
-import './Creatures.css';
 import { PageTitle } from '../shared/page-title/PageTitle';
-import { Creature } from './creature/Creature';
-import { ICreature } from './ICreature';
+import { Creature } from './Creature';
+import { ICreature } from '../../models/ICreature';
 
 export class Creatures extends CreaturesManager {
   constructor(props) {

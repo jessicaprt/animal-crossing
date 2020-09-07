@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { VillagersManager } from './VillagersManager'
+import { VillagersManager } from '../../services/VillagersManager'
 import { Container, Modal, AccordionSummary, Accordion, AccordionDetails, TextField, Chip } from '@material-ui/core';
 import { PageTitle } from '../shared/page-title/PageTitle';
 import { IVillager } from '../../models/IVillager';

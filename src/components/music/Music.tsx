@@ -1,9 +1,8 @@
 import React from 'react';
-import { MusicManager } from './MusicManager';
-import { Container, TextField } from '@material-ui/core';
 
-import './Music.css';
-import { IMusic } from './IMusic';
+import { MusicManager } from '../../services/MusicManager';
+import { Container, TextField } from '@material-ui/core';
+import { IMusic } from '../../models/IMusic';
 import { PageTitle } from '../shared/page-title/PageTitle';
 
 import SearchIcon from '@material-ui/icons/Search';

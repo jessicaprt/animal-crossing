@@ -16,6 +16,8 @@ import { Fossils } from './components/fossils/Fossils';
 import { HourlyMusic } from './components/hourly-music/HourlyMusic';
 
 import './css/Villagers.css';
+import './css/Music.css';
+import './css/Creature.css';
 
 function App() {
   return (

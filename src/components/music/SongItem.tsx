@@ -1,10 +1,9 @@
 import React from 'react';
 
-import { Grid, AccordionSummary, Accordion, AccordionDetails } from '@material-ui/core';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { AccordionSummary, Accordion, AccordionDetails } from '@material-ui/core';
+import { IMusic } from '../../models/IMusic';
 
-import { IMusic } from '../IMusic';
-import './SongItem.css';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 export class SongItem extends React.Component<{song: IMusic}, {}> {
   constructor(props) {

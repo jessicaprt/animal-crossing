@@ -1,11 +1,9 @@
 import React from 'react';
 
-import './Creature.css';
-
-import { ICreature } from '../ICreature';
-import { CreatureItem } from './creature-item/CreatureItem';
+import { ICreature } from '../../models/ICreature';
+import { CreatureItem } from './CreatureItem';
 import { Modal } from '@material-ui/core';
-import { CreatureDetails } from '../creature-details/CreatureDetails';
+import { CreatureDetails } from './CreatureDetails';
 
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 

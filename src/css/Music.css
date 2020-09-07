@@ -63,6 +63,31 @@
   width: 50px !important;
 }
 
+
+/** SONG ITEM **/
+.song-item-container {
+  margin-bottom: 5px;
+}
+
+.song-item-image {
+  text-align: center;
+  width: 200px;
+}
+
+.song-item-image img {
+  width: 150px;
+}
+
+.song-item-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+/** MEDIA QUERIES **/
+
 @media (max-width: 600px) { 
   .music-now-playing img {
     width: 150px;

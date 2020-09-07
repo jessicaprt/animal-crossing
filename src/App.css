@@ -148,8 +148,13 @@ body,
 }
 
 .MuiRadio-colorSecondary.Mui-checked,
-.MuiFormLabel-root.Mui-focused {
+.MuiFormLabel-root.Mui-focused,
+.MuiTab-textColorPrimary.Mui-selected {
   color: #8dd6e0 !important;
+}
+
+.PrivateTabIndicator-colorPrimary-2 {
+  background-color: #8dd6e0 !important;
 }
 
 .app-chip-item {

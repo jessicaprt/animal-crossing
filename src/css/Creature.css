@@ -1,0 +1,85 @@
+.fish-item {
+  margin: 0 5px 25px 5px;
+  cursor: pointer;
+}
+
+.fish-item:hover {
+  opacity: 0.5;
+}
+
+.fish-item-image {
+  height: 150px;
+  border: 3px solid #ddd;
+  position: relative;
+  background-color: #eee;
+}
+
+.fish-item-image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.fish-item-name {
+  text-align: center;
+}
+
+.fish-item-image,
+.fish-item-name {
+  width: 150px;
+}
+
+.fish-modal-wrapper {
+  height: 100
+}
+
+.creature-accordion {
+  box-shadow: none !important;
+}
+
+
+/** Creature Details **/
+
+.creature-details-image {
+  text-align: center;
+  width: 100%;
+}
+
+.creature-hidden {
+  visibility: hidden;
+  width: 100%;
+}
+
+.creature-details-image-main {
+  width: 100%;
+  max-width: 300px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.creature-details-main {
+  border-top: 3px solid #eee;
+}
+
+.creature-detail-col {
+  padding: 5px 20px 5px 0;
+}
+
+.creature-detail-chip {
+  margin-right: 5px;
+  height: 18px !important;
+}
+
+/** Creatures **/
+
+.creatures-wrapper {
+  min-height: 100vh;
+}
+
+.creatures-container {
+  background-color: #fff;
+  width: 100%;
+}
