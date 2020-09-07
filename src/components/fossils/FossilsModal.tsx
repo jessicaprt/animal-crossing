@@ -1,8 +1,8 @@
 import React from 'react';
-import './FossilsModal.css';
 
-import { IFossil } from '../IFossils';
+import { IFossil } from '../../models/IFossils';
 import { Button } from '@material-ui/core';
+
 import CloseIcon from '@material-ui/icons/Close';
 
 interface IFossilsModalProps {

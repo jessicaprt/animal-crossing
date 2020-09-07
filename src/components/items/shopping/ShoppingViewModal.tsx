@@ -2,6 +2,7 @@ import React from 'react';
 
 import { IItem } from '../../../models/IItem';
 import { Button, Chip } from '@material-ui/core';
+
 import CloseIcon from '@material-ui/icons/Close';
 
 interface IShoppingViewModalProps {

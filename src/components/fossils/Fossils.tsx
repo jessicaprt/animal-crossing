@@ -1,11 +1,12 @@
 import React from 'react';
-import { FossilsManager } from './FossilsManager';
+
+import { FossilsManager } from '../../services/FossilsManager';
 import { Container, Modal } from '@material-ui/core';
 import { PageTitle } from '../shared/page-title/PageTitle';
-import { IFossil } from './IFossils';
+import { IFossil } from '../../models/IFossils';
 import { LoadingState } from '../shared/loading-state/LoadingState';
-import { FossilItem } from './fossil-item/FossilItem';
-import { FossilsModal } from './fossils-modal/FossilsModal';
+import { FossilItem } from './FossilItem';
+import { FossilsModal } from './FossilsModal';
 
 export class Fossils extends FossilsManager {
   /** if component is mounted */

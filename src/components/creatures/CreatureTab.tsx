@@ -17,7 +17,7 @@ interface IFishProps {
   fishes: ICreature[]
 }
 
-export class Creature extends React.Component<IFishProps, IFishState> {
+export class CreatureTab extends React.Component<IFishProps, IFishState> {
   constructor(props) {
     super(props);
     this.state = {

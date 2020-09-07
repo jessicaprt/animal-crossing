@@ -2,10 +2,9 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 
-import './IHomepageItem';
-import './Homepage.css';
-import { IHomepageItem } from './IHomepageItem';
-import { HomepageIcon } from './homepage-icon/HomepageIcon';
+import '../../models/IHomepageItem';
+import { IHomepageItem } from '../../models/IHomepageItem';
+import { HomepageIcon } from './HomepageIcon';
 
 export class Homepage extends React.Component<{}, {time: string}> {
   

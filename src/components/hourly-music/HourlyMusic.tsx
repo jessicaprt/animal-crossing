@@ -1,5 +1,4 @@
 import React from 'react';
-import './HourlyMusic.css'
 
 import { HourlyMusicManager } from '../../services/HourlyMusicManager';
 import { IHourlyMusic, IWeatherMusic } from '../../models/IHourlyMusic';

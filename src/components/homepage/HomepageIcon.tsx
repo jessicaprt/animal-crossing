@@ -1,8 +1,8 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 
-import { IHomepageItem } from '../IHomepageItem';
-import { Link } from "react-router-dom"; 
+import { IHomepageItem } from '../../models/IHomepageItem';
+import { Link } from 'react-router-dom'; 
 
 export class HomepageIcon extends React.Component<{homepageItem: IHomepageItem}, {}> {
   constructor(props) {

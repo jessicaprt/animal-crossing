@@ -1,12 +1,11 @@
 import React from 'react';
-import './Art.css';
 
-import { ArtManager } from './ArtManager';
+import { ArtManager } from '../../services/ArtManager';
 import { Container, Modal } from '@material-ui/core';
 import { PageTitle } from '../shared/page-title/PageTitle';
-import { IArt } from './IArt';
-import { ArtItem } from './art-item/ArtItem';
-import { ArtModal } from './art-modal/ArtModal';
+import { IArt } from '../../models/IArt';
+import { ArtItem } from './ArtItem';
+import { ArtModal } from './ArtModal';
 import { LoadingState } from '../shared/loading-state/LoadingState';
 
 export class Art extends ArtManager {

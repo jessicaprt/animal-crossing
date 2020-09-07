@@ -1,5 +1,5 @@
 import React from 'react';
-import { Base } from '../../utils/base/Base';
+import { Base } from '../utils/base/Base';
 
 export class ArtManager extends Base {
   /**

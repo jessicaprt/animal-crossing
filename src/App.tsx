@@ -15,11 +15,15 @@ import { Art } from './components/art/Art';
 import { Fossils } from './components/fossils/Fossils';
 import { HourlyMusic } from './components/hourly-music/HourlyMusic';
 
+import './css/Homepage.css';
 import './css/Villagers.css';
 import './css/Music.css';
 import './css/Creature.css';
 import './css/Item.css';
 import './css/Freebies.css';
+import './css/Art.css';
+import './css/Fossils.css';
+import './css/HourlyMusic.css';
 
 function App() {
   return (

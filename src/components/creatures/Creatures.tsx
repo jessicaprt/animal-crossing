@@ -3,7 +3,7 @@ import React from 'react';
 import { CreaturesManager } from '../../services/CreaturesManager';
 import { Container, Tabs, Tab, Button, Tooltip } from '@material-ui/core';
 import { PageTitle } from '../shared/page-title/PageTitle';
-import { Creature } from './Creature';
+import { CreatureTab } from './CreatureTab';
 import { ICreature } from '../../models/ICreature';
 
 export class Creatures extends CreaturesManager {
@@ -172,13 +172,13 @@ export class Creatures extends CreaturesManager {
 
           <div className="creatures-section">
             <div hidden={this.state.data.activeTab != 0}>
-              <Creature fishes={this.state.data.allFishes} />
+              <CreatureTab fishes={this.state.data.allFishes} />
             </div>
             <div hidden={this.state.data.activeTab != 1}>
-              <Creature fishes={this.state.data.allBugs} />
+              <CreatureTab fishes={this.state.data.allBugs} />
             </div>
             <div hidden={this.state.data.activeTab != 2}>
-              <Creature fishes={this.state.data.allSeaCreatures} />
+              <CreatureTab fishes={this.state.data.allSeaCreatures} />
             </div>
           </div>
 

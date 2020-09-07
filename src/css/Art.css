@@ -1,0 +1,62 @@
+.art-section-title {
+  text-align: center;
+}
+
+
+/** ART ITEM **/
+
+.art-item-container {
+  width: 150px;
+  margin: 5px 5px 25px 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.art-item-container:hover {
+  opacity: 0.5;
+}
+
+.art-image-container {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  margin: 0 auto;
+}
+
+.art-image-container img {
+  margin: 0 auto;
+}
+
+.art-item-skeleton {
+  position: absolute;
+  z-index: 10;
+}
+
+
+/** ART MODAL **/
+
+.art-modal-image-container {
+  text-align: center;
+  width: 100%;
+}
+
+.art-modal-title {
+  margin: 10px auto;
+  width: fit-content;
+  padding: 10px;
+  border: 1px solid;
+}
+
+.art-modal-details-container {
+  border-top: 3px solid #eee;
+  border-bottom: 3px solid #eee;
+  margin-top: 30px;
+}
+
+.art-modal-museum-details-container {
+  border-bottom: 3px solid #eee;
+}
+
+.art-detail-col {
+  padding-right: 20px
+}

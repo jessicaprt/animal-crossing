@@ -1,5 +1,5 @@
-import { Base } from "../../utils/base/Base";
-import { IFossil } from "./IFossils";
+import { Base } from "../utils/base/Base";
+import { IFossil } from "../models/IFossils";
 
 export class FossilsManager extends Base {
   _getAllFossils() {

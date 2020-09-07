@@ -1,9 +1,8 @@
 import React from 'react';
-import './ArtModal.css';
 
-import { IArt } from '../IArt';
+import { IArt } from '../../models/IArt';
 import { Chip, Button } from '@material-ui/core';
-import { Art } from '../Art';
+
 import CloseIcon from '@material-ui/icons/Close';
 
 interface IArtModalProps {

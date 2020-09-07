@@ -1,11 +1,8 @@
 import React from 'react';
-import './ArtItem.css';
 
-import { IArt } from '../IArt';
-import { Modal } from '@material-ui/core';
+import { IArt } from '../../models/IArt';
 
 import Skeleton from '@material-ui/lab/Skeleton';
-import { ArtModal } from '../art-modal/ArtModal';
 
 interface IArtItemProps {
   art: IArt;

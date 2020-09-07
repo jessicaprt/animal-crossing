@@ -1,7 +1,6 @@
 import React from 'react';
-import './FossilItem.css';
-import { IFossil } from '../IFossils';
-import Skeleton from '@material-ui/lab/Skeleton';
+
+import { IFossil } from '../../models/IFossils';
 
 
 interface IFossilItemProps {
