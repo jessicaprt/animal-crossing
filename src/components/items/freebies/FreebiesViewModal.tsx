@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { IItem } from '../../../../IItem';
-import { Button } from '@material-ui/core';
+import { IItem } from '../../../models/IItem';
+import { Button, Chip } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 
-interface IViewModalProps {
+interface IFreebiesViewModalProps {
   item: IItem;
   closeAction: any;
 }
@@ -16,7 +16,7 @@ const ItemDetail = ({label, value}) => {
   </tr>
 }
 
-export class ViewModal extends React.Component<IViewModalProps, {}> {
+export class FreebiesViewModal extends React.Component<IFreebiesViewModalProps, {}> {
   render() {
     const _item: IItem = this.props.item;
     const _hha1: string = _item.hhaConcept1;
@@ -32,11 +32,14 @@ export class ViewModal extends React.Component<IViewModalProps, {}> {
           <img src={_item.imageUri} />
         </div>
 
-        <div className="item-view-modal-details padded-4y padded-2x">
+        <div className="item-view-modal-details padded-2y padded-2x">
+          <div className="item-view-chip-list padded-2y">
+            {_item.isOutdoor && <Chip className="app-chip-item" size="small" label="Outdoor" />}
+            {_item.isInteractive && <Chip className="app-chip-item" size="small" label="Interactive" />}
+          </div>
           <table>
             <tbody>
               <ItemDetail label="Sell Price" value={`${_item.sellPrice} Bells`} />
-              <ItemDetail label="HHA Concept" value={`${_hha1}${_hha2}`} />
               {_item.tag && <ItemDetail label="tags" value={_item.tag} />}
             </tbody>
           </table>

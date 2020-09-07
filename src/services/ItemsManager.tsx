@@ -1,6 +1,4 @@
-import { Base } from "../../utils/base/Base";
-
-import './Item.css';
+import { Base } from "../utils/base/Base";
 
 export class ItemsManager extends Base {
   /**

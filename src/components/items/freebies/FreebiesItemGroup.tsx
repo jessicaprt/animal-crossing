@@ -1,6 +1,6 @@
 import React from 'react';
-import { IFreebieGroup, IItemGroup } from '../../IItem';
-import { FreebiesItem } from './freebiesItem/FreebiesItem';
+import { IFreebieGroup, IItemGroup } from '../../../models/IItem';
+import { FreebiesItem } from './FreebiesItem';
 
 interface IFreebieItemProps {
   items: IFreebieGroup;

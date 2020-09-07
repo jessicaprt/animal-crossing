@@ -1,10 +1,9 @@
 import React from 'react';
 
-import { IItem, IItemGroup } from '../../../IItem';
+import { IItem, IItemGroup } from '../../../models/IItem';
 import { Menu, MenuItem, Modal } from '@material-ui/core';
-
-import { ViewModal } from './diyViewModal/ViewModal';
-import { CustomizeModal } from './diyCustomizeModal/CustomizeModal';
+import { DiyViewModal } from './DiyViewModal';
+import { DiyCustomizeModal } from './DiyCustomizeModal';
 
 interface IDiyTabItemProps {
   diyItemGroup: IItemGroup;
@@ -102,13 +101,13 @@ export class DiyTabItem extends React.Component<IDiyTabItemProps, IDiyTabItemSta
 
         <Modal open={_viewModal} onClose={this.closeViewModal}>
           <div className="main-modal-wrapper">
-            <ViewModal item={_item} closeAction={this.closeViewModal} />
+            <DiyViewModal item={_item} closeAction={this.closeViewModal} />
           </div>
         </Modal>
 
         <Modal open={_customizeModal} onClose={this.closeCustomizeModal}>
           <div className="main-modal-wrapper">
-            <CustomizeModal itemGroup={_itemGroup} closeAction={this.closeCustomizeModal} />
+            <DiyCustomizeModal itemGroup={_itemGroup} closeAction={this.closeCustomizeModal} />
           </div>
         </Modal>
       </div>

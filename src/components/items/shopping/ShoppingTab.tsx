@@ -1,8 +1,8 @@
 import React from 'react';
 import Pagination from '@material-ui/lab/Pagination';
 
-import { IItemGroup, IItem } from '../../IItem';
-import { ShoppingTabItem } from './shoppingTabItem/ShoppingTabItem';
+import { ShoppingTabItem } from './ShoppingTabItem';
+import { IItem, IItemGroup } from '../../../models/IItem';
 
 interface IShoppingTabProps {
   title: string;

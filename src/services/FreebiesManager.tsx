@@ -1,9 +1,7 @@
 import React from 'react';
 
-import './Freebies.css';
-
-import { IFreebieGroup, IItem, IItemGroup } from '../IItem';
-import { ItemsManager } from '../ItemsManager';
+import { IFreebieGroup, IItem, IItemGroup } from '../models/IItem';
+import { ItemsManager } from './ItemsManager';
 
 import Skeleton from '@material-ui/lab/Skeleton';
 

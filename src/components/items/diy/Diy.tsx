@@ -1,17 +1,15 @@
 import React from 'react';
-import { ItemsManager } from '../ItemsManager';
 
+import { ItemsManager } from '../../../services/ItemsManager';
 import { Container, Tabs, Tab, Tooltip } from '@material-ui/core';
 import { PageTitle } from '../../shared/page-title/PageTitle';
-
-import { IItem, IItemGroup } from '../IItem';
-import { DiyTab } from './diyTab/DiyTab';
+import { IItem, IItemGroup } from '../../../models/IItem';
+import { DiyTab } from './DiyTab';
 
 import KitchenIcon from '@material-ui/icons/Kitchen';
 import FilterFramesIcon from '@material-ui/icons/FilterFrames';
 import LocalCafeIcon from '@material-ui/icons/LocalCafe';
 
-import '../Item.css';
 
 interface IRenderedItem {
   allItems: any,

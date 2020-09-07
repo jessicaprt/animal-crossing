@@ -1,14 +1,14 @@
 import React from 'react';
 
-import { ItemsManager } from "../ItemsManager";
+import { IItemGroup, IItem } from '../../../models/IItem';
+import { ShoppingTab } from './ShoppingTab';
+import { ItemsManager } from "../../../services/ItemsManager";
 import { Container, Tabs, Tab, Tooltip } from '@material-ui/core';
 import { PageTitle } from '../../shared/page-title/PageTitle';
 
 import KitchenIcon from '@material-ui/icons/Kitchen';
 import FilterFramesIcon from '@material-ui/icons/FilterFrames';
 import LocalCafeIcon from '@material-ui/icons/LocalCafe';
-import { IItemGroup, IItem } from '../IItem';
-import { ShoppingTab } from './shoppingTab/ShoppingTab';
 
 interface IRenderedItem {
   allItems: any,

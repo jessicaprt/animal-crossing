@@ -9,8 +9,8 @@ import { Music } from './components/music/Music';
 import { Creatures } from './components/creatures/Creatures';
 import { Diy } from './components/items/diy/Diy';
 import { Shopping } from './components/items/shopping/Shopping';
-import { FreebiesPage } from './components/items/freebies/freebiesPage/FreebiesPage';
-import { FreebiesAll } from './components/items/freebies/freebiesAll/FreebiesAll';
+import { FreebiesPage } from './components/items/freebies/FreebiesPage';
+import { FreebiesAll } from './components/items/freebies/FreebiesAll';
 import { Art } from './components/art/Art';
 import { Fossils } from './components/fossils/Fossils';
 import { HourlyMusic } from './components/hourly-music/HourlyMusic';
@@ -18,6 +18,8 @@ import { HourlyMusic } from './components/hourly-music/HourlyMusic';
 import './css/Villagers.css';
 import './css/Music.css';
 import './css/Creature.css';
+import './css/Item.css';
+import './css/Freebies.css';
 
 function App() {
   return (

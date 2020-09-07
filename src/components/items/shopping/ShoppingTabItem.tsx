@@ -1,21 +1,23 @@
 import React from 'react';
 
-import { IItem, IItemGroup } from '../../../IItem';
+import { IItem, IItemGroup } from '../../../models/IItem';
 import { Menu, MenuItem, Modal } from '@material-ui/core';
-import { FreebiesCustomizeModal } from './freebiesCustomizeModal/FreebiesCustomizeModal';
-import { FreebiesViewModal } from './freebiesViewModal/FreebiesViewModal';
+import { ShoppingViewModal } from './ShoppingViewModal';
+import { ShoppingColorsModal } from './ShoppingColorsModal';
 
-interface IFreebiesItemProps {
-  diyItemGroup: IItemGroup;
+import NotificationsIcon from '@material-ui/icons/Notifications';
+
+interface IShoppingTabItemProps {
+  shoppingItemGroup: IItemGroup;
 }
 
-interface IFreebiesItemState {
+interface IShoppingTabItemState {
   anchor: any;
   modalViewOpen: boolean;
   modalCustomizeOpen: boolean;
 }
 
-export class FreebiesItem extends React.Component<IFreebiesItemProps, IFreebiesItemState> {
+export class ShoppingTabItem extends React.Component<IShoppingTabItemProps, IShoppingTabItemState> {
   constructor(props) {
     super(props);
 
@@ -29,7 +31,7 @@ export class FreebiesItem extends React.Component<IFreebiesItemProps, IFreebiesI
     this.handleClose = this.handleClose.bind(this);
     this.openViewModal = this.openViewModal.bind(this);
     this.closeViewModal = this.closeViewModal.bind(this);
-    this.closeCustomizeModal = this.closeCustomizeModal.bind(this);
+    this.closeColorsModal = this.closeColorsModal.bind(this);
     this.viewMenuClicked = this.viewMenuClicked.bind(this);
     this.customizeMenuClicked = this.customizeMenuClicked.bind(this);
   }
@@ -54,12 +56,12 @@ export class FreebiesItem extends React.Component<IFreebiesItemProps, IFreebiesI
     this.changeState('modalCustomizeOpen', true);
   }
 
-  closeCustomizeModal() {
+  closeColorsModal() {
     this.changeState('modalCustomizeOpen', false);
   }
 
   changeState(key: string, value: any) {
-    let currentState: IFreebiesItemState = this.state;
+    let currentState: IShoppingTabItemState = this.state;
     currentState[key] = value;
     this.setState(currentState);
   } 
@@ -75,8 +77,8 @@ export class FreebiesItem extends React.Component<IFreebiesItemProps, IFreebiesI
   }
 
   render() {
-    const _item: IItem = this.props.diyItemGroup.variations[0];
-    const _itemGroup: IItemGroup = this.props.diyItemGroup;
+    const _item: IItem = this.props.shoppingItemGroup.variations[0];
+    const _itemGroup: IItemGroup = this.props.shoppingItemGroup;
     const _viewModal: boolean = this.state.modalViewOpen;
     const _customizeModal: boolean = this.state.modalCustomizeOpen;
 
@@ -86,7 +88,13 @@ export class FreebiesItem extends React.Component<IFreebiesItemProps, IFreebiesI
           <div className="item-tab-image">
             <img src={_item.imageUri} alt={_item.name} />  
           </div>
-          {_item.name}
+          <p>{_item.name}</p>
+          {_item.buyPrice
+            ? <div className="font-color-light item-price-wrapper">
+                <p className="item-bells"><NotificationsIcon fontSize="small"/></p>
+                <p>{_item.buyPrice}</p>
+              </div>
+            : <p className="font-color-light">--</p>}
         </div>
 
         {(this.state && _itemGroup.variations.length > 1)&& <Menu
@@ -96,18 +104,18 @@ export class FreebiesItem extends React.Component<IFreebiesItemProps, IFreebiesI
           open={Boolean(this.state.anchor)}
           onClose={this.handleClose}>
           <MenuItem onClick={this.viewMenuClicked}>View</MenuItem>
-          <MenuItem onClick={this.customizeMenuClicked}>Customize</MenuItem>
+          <MenuItem onClick={this.customizeMenuClicked}>Colors</MenuItem>
         </Menu> }
 
         <Modal open={_viewModal} onClose={this.closeViewModal}>
           <div className="main-modal-wrapper">
-            <FreebiesViewModal item={_item} closeAction={this.closeViewModal} />
+            <ShoppingViewModal item={_item} closeAction={this.closeViewModal} />
           </div>
         </Modal>
 
-        <Modal open={_customizeModal} onClose={this.closeCustomizeModal}>
+        <Modal open={_customizeModal} onClose={this.closeColorsModal}>
           <div className="main-modal-wrapper">
-            <FreebiesCustomizeModal itemGroup={_itemGroup} closeAction={this.closeCustomizeModal} />
+            <ShoppingColorsModal itemGroup={_itemGroup} closeAction={this.closeColorsModal} />
           </div>
         </Modal>
       </div>

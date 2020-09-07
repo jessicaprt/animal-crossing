@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { Container } from '@material-ui/core';
-import { PageTitle } from '../../../shared/page-title/PageTitle';
-import { FreebiesItemGroup } from '../freebiesItemGroup/FreebiesItemGroup';
-import { FreebiesManager, FreebiesSkeleton } from '../FreebiesManager';
+import { PageTitle } from '../../shared/page-title/PageTitle';
+import { FreebiesItemGroup } from './FreebiesItemGroup';
+import { FreebiesManager, FreebiesSkeleton } from '../../../services/FreebiesManager';
 import Skeleton from '@material-ui/lab/Skeleton';
 
 export class FreebiesPage extends FreebiesManager {

@@ -1,7 +1,9 @@
 import React from 'react';
-import { IItem, IItemGroup } from '../../IItem';
+
+import { IItem, IItemGroup } from '../../../models/IItem';
+import { DiyTabItem } from './DiyTabItem';
+
 import Pagination from '@material-ui/lab/Pagination';
-import { DiyTabItem } from './diyTabItem/DiyTabItem';
 
 interface IDiyTabProps {
   title: string;

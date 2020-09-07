@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { IItem, IItemGroup } from '../../../../IItem';
+import { IItem, IItemGroup } from '../../../models/IItem';
 import { Button } from '@material-ui/core';
 
 import CloseIcon from '@material-ui/icons/Close';
@@ -21,7 +21,7 @@ const CustomItem = ({imageUri, label}) => {
   );
 }
 
-export class CustomizeModal extends React.Component<ICustomizeModalProps, {}> {
+export class DiyCustomizeModal extends React.Component<ICustomizeModalProps, {}> {
   render() {
     const _itemGroup: IItemGroup = this.props.itemGroup;
 
