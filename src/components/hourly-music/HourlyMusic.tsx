@@ -67,6 +67,11 @@ export class HourlyMusic extends HourlyMusicManager {
     this.setCurrentDefaultHour();
   }
 
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
+
   /**
    * sets the Hours selection style
    */
@@ -94,6 +99,7 @@ export class HourlyMusic extends HourlyMusicManager {
     const _now = new Date();
     const _hour = _now.getHours() > 12 ? _now.getHours() - 12 : (_now.getHours() > 0 ? _now.getHours() : 12);
     const _meridiem = _now.getHours() >= 12 ? this.PM : this.AM;
+    console.log('time:', _hour, _meridiem);
     this._changeState('hourSelected', _hour);
     this._changeState('meridiemSelected', _meridiem);
     this.onTimeChanged();
@@ -178,6 +184,8 @@ export class HourlyMusic extends HourlyMusicManager {
       const _currentTime = this.decodeTime(_hourSelected, _meridiemSelected);
       const _currentHourlyMusic: IHourlyMusic|undefined = _allHourlyMusic.find((h: IHourlyMusic) => h.hour === _currentTime);
       
+      console.log('curr', _currentTime);
+
       if (_currentHourlyMusic) {
         const _currentWeatherMusicSelections: IWeatherMusic[] = _currentHourlyMusic.variations;
         const _currentBackgroundMusic: IWeatherMusic|undefined = _currentWeatherMusicSelections.find((w: IWeatherMusic) => w.weather === _weatherSelected);
@@ -229,7 +237,19 @@ export class HourlyMusic extends HourlyMusicManager {
    * @param meridiem 
    */
   decodeTime(hour: number, meridiem: string): number {
-    return meridiem === this.PM ? hour + 12 : (hour === 12 ? 0 : hour);
+    if (meridiem === this.PM) {
+      if (hour === 12) {
+        return hour;
+      } else {
+        return hour + 12;
+      }
+    } else {
+      if (hour === 12) {
+        return 0;
+      } else {
+        return hour;
+      }
+    }
   }
 
   render() {
