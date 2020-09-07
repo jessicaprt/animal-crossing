@@ -3,22 +3,21 @@ import React from 'react';
 import { VillagersManager } from './VillagersManager'
 import { Container, Modal, AccordionSummary, Accordion, AccordionDetails, TextField, Chip } from '@material-ui/core';
 import { PageTitle } from '../shared/page-title/PageTitle';
-import { IVillager } from './IVillager';
-import { VillagerItem } from './villager-item/VillagerItem';
-import { VillagerFilters } from './villager-filters/VillagerFilters';
+import { IVillager } from '../../models/IVillager';
+import { VillagerItem } from './VillagerItem';
+import { VillagerFilters } from './VillagerFilters';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import SearchIcon from '@material-ui/icons/Search';
 
-import './Villagers.css';
-import { VillagerDetails } from './villager-details/VillagerDetails';
-import { IVillageFilters, IVillageFiltersSelection } from './villager-filters/IVillageFilters';
+import { VillagerDetails } from './VillagerDetails';
+import { IVillageFilters, IVillageFiltersSelection } from '../../models/IVillageFilters';
 import { LoadingState } from '../shared/loading-state/LoadingState';
 
 const FilterChip = ({filter, filterLabel}) => {
   if (filter === 'all') {
     return <span></span>;
   } else {
-    return <Chip className="villager-chip font--main" label={`${filterLabel}: ${filter}`} />
+    return <Chip className="villager-chip font--main background-blue" label={`${filterLabel}: ${filter}`} />
   }
 }
 

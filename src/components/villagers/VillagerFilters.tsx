@@ -2,16 +2,15 @@ import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import SearchIcon from '@material-ui/icons/Search';
 
-import './VillagerFilters.css';
 import { Grid, FormLabel, FormGroup, FormControl, FormControlLabel, Radio, RadioGroup } from '@material-ui/core';
-import { IVillageFilters, IVillageFiltersSelection } from './IVillageFilters';
+import { IVillageFilters, IVillageFiltersSelection } from '../../models/IVillageFilters';
 
 interface IVillagerFiltersProps {
   onFilterSelecionChange(filters: IVillageFiltersSelection): void, 
   availableFilters: IVillageFilters 
 }
 
-const DefaultSelectionElement = ({key}) => {
+const DefaultSelectionElement = () => {
   return <FormControlLabel
     key='gender-all'
     value={DEFAULT_SELECTION}
@@ -26,7 +25,7 @@ const FilterGroup = ({groupName, optionsArr, state, changeFn}) => {
       <FormLabel component="legend">{groupName}</FormLabel>
       <RadioGroup aria-label="gender" name="gender" value={state} onChange={changeFn}>
         <FormGroup className="filter-form-group padded-2x font--main">
-          <DefaultSelectionElement key='gender-all' />
+          <DefaultSelectionElement />
           {optionsArr.map((optionsArr:string) => 
             <FormControlLabel
               key={optionsArr}

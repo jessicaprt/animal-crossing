@@ -1,0 +1,121 @@
+.villagers-wrapper {
+  min-height: 100vh;
+}
+
+.villagers-container {
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.villager-filter-title {
+  width: 100%;
+}
+
+.villager-filter-title h3 {
+  text-align: right;
+}
+
+.villager-chip {
+  margin-right: 10px;
+  font-family: 'Dosis', sans-serif !important;
+  color: #fff !important;
+}
+
+/** Villager Item **/
+
+.villager-item-container {
+  cursor: pointer;
+}
+
+.villager-item-container:hover {
+  opacity: 0.8;
+}
+
+.villager-item-image {
+  width: 150px;
+  height: 150px;
+  border-width: 5px;
+  border-style: solid;
+  text-align: center;
+  background-color: #eee;
+}
+
+.villager-item-image img {
+  width: 90%;
+}
+
+.villager-item-name {
+  text-align: center;
+}
+
+.MuiExpansionPanel-root:before {
+  background-color: rgba(0,0,0,0) !important;
+}
+
+
+/** Villager Filters **/
+
+.filter-form-group {
+  max-height: 300px;
+}
+
+.MuiRadio-root {
+  padding: 2px !important;
+}
+
+.MuiFormControlLabel-label {
+  font-size: 13px !important;
+  font-family: 'Dosis', sans-serif !important;
+  padding-right: 50px;
+}
+
+.MuiFormLabel-root {
+  font-size: 14px !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  font-family: 'Dosis', sans-serif !important;
+}
+
+@media (max-width: 600px) { 
+  .filter-form-group {
+    max-width: 300px;
+    max-height: 530px;
+  }
+}
+
+
+
+/** Villager Details **/
+
+.villager-details-image {
+  width: 100%;
+}
+
+.villager-details-image img {
+  width: 100%;
+  max-width: 500px;
+}
+
+.villager-details-main h1 {
+  margin: 10px 0;
+}
+
+.villager-details-line {
+  width: 100%;
+  height: 3px;
+}
+
+.villager-details-saying {
+  text-align: center;
+}
+
+.villager-details-sub-detail {
+  padding-right: 20px;
+}
+
+.villager-details-sub-detail h3{
+  margin: 5px;
+}

@@ -15,6 +15,8 @@ import { Art } from './components/art/Art';
 import { Fossils } from './components/fossils/Fossils';
 import { HourlyMusic } from './components/hourly-music/HourlyMusic';
 
+import './css/Villagers.css';
+
 function App() {
   return (
     <HashRouter basename={process.env.PUBLIC_URL}>

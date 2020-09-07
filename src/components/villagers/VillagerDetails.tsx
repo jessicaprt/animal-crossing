@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { IVillager } from '../IVillager';
+import { IVillager } from '../../models/IVillager';
 import { Grid, Chip, Button } from '@material-ui/core';
 
 import CloseIcon from '@material-ui/icons/Close';
-
-import './VillagerDetails.css';
 
 const VillagerSubDetail = ({label, text}) => {
   return (

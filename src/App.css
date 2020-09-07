@@ -1,6 +1,6 @@
 body,
 .font--main {
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Dosis', sans-serif !important;
 }
 
 .font-color-dark {
@@ -21,6 +21,18 @@ body,
 
 .background-dark {
   background-color: #938979;
+}
+
+.background-blue {
+  background-color: #8dd6e0 !important;
+}
+
+.background-green {
+  background-color: #9de3c7 !important;
+}
+
+.background-green-light {
+  background-color: #9de3c76b !important;
 }
 
 .padded-6y {
@@ -116,6 +128,10 @@ body,
   background-color: #fff;
 }
 
+
+
+/** React components style override **/
+
 .MuiPaper-elevation1:before,
 .MuiPaper-elevation1 {
   box-shadow: none !important;
@@ -131,6 +147,11 @@ body,
   font-family: 'Dosis', sans-serif !important;
 }
 
+.MuiRadio-colorSecondary.Mui-checked,
+.MuiFormLabel-root.Mui-focused {
+  color: #8dd6e0 !important;
+}
+
 .app-chip-item {
   margin-right: 5px;
   background-color: #bd7ce1 !important;
@@ -138,6 +159,8 @@ body,
   font-family: 'Dosis', sans-serif !important;
 }
 
+
+/** Media queries **/
 @media (max-width: 600px) { 
   .main-modal-container {
     max-width: 300px;

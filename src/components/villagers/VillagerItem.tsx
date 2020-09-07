@@ -1,6 +1,5 @@
 import React from 'react';
-import './VillagerItem.css';
-import { IVillager } from '../IVillager';
+import { IVillager } from '../../models/IVillager';
 
 export class VillagerItem extends React.Component<{villager: IVillager}, {}> {
   constructor(props) {
