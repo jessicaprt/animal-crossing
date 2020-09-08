@@ -14,11 +14,13 @@ import { FreebiesAll } from './components/items/freebies/FreebiesAll';
 import { Art } from './components/art/Art';
 import { Fossils } from './components/fossils/Fossils';
 import { HourlyMusic } from './components/hourly-music/HourlyMusic';
+import { CreaturesAvailabilityCalendar } from './components/creatures/availability-calendar/CreaturesAvailabilityCalendar';
 
 import './css/Homepage.css';
 import './css/Villagers.css';
 import './css/Music.css';
 import './css/Creature.css';
+import './css/CreaturesAvailabilityCalendar.css';
 import './css/Item.css';
 import './css/Freebies.css';
 import './css/Art.css';
@@ -33,6 +35,7 @@ function App() {
         <Route path="/music" component={Music} />
         <Route path="/villagers" component={Villagers} />
         <Route path="/creatures" component={Creatures} />
+        <Route path="/creature/availability-calendar" component={CreaturesAvailabilityCalendar} />
         <Route path="/diy" component={Diy} />
         <Route path="/shopping" component={Shopping} />
         <Route path="/freebies/:freebie_id" component={FreebiesPage} />

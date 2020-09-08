@@ -1,0 +1,64 @@
+.ac-month-selection > .MuiInputBase-root {
+  min-width: 200px;
+}
+
+.ac-selection-wrapper {
+  display: flex
+}
+
+.ac-selections-button {
+  margin: 5px 0;
+}
+
+.ac-selections-button > button {
+  min-width: 150px;
+}
+
+.ac-selections-button-wrapper {
+  text-align: center;
+}
+
+.ac-empty-background {
+  background-color: #eee;
+}
+
+.ac-month-selection-wrapper {
+  width: 100%;
+  border-top: 3px solid #ccc;
+  border-bottom: 3px solid #ccc;
+  text-align: center;
+}
+
+.monthly-view-col,
+.yearly-view-col {
+  border-right: 1px solid #fff;
+}
+
+.monthly-view-col img {
+  max-width: 20px;
+}
+
+.yearly-view-col img {
+  max-width: 30px;
+}
+
+.ac-table-container {
+  max-height: 440px;
+}
+
+.ac-month-name {
+  min-width: 300px;
+}
+
+.ac-month-left,
+.ac-month-right {
+  cursor: pointer;
+}
+
+.ac-creature-name {
+  cursor: pointer;
+}
+
+.ac-creature-name:hover {
+  font-weight: 700;
+}

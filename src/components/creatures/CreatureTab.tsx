@@ -18,6 +18,9 @@ interface IFishProps {
 }
 
 export class CreatureTab extends React.Component<IFishProps, IFishState> {
+  /** if component is mounted */
+  _isMounted: boolean;
+
   constructor(props) {
     super(props);
     this.state = {
@@ -26,17 +29,29 @@ export class CreatureTab extends React.Component<IFishProps, IFishState> {
       isOpenModal: false
     };
 
+    this._isMounted = false;
+
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
 
     this._changeState('filteredCreatures', this.props.fishes);
   }
 
+  componentDidMount() {
+    this._isMounted = true;
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
   _changeState(key: string, value: any) {
     let currentState = this.state;
     currentState[key] = value;
 
-    this.setState(currentState);
+    if (this._isMounted) {
+      this.setState(currentState);
+    }
   }
 
   openModal(fish: ICreature) {
@@ -67,7 +82,7 @@ export class CreatureTab extends React.Component<IFishProps, IFishState> {
 
         <Modal open={this.state.isOpenModal} onClose={this.closeModal}>
           <div className="main-modal-wrapper">
-            <CreatureDetails fish={this.state.currentCreature} closeAction={this.closeModal}/>
+            <CreatureDetails creature={this.state.currentCreature} closeAction={this.closeModal}/>
           </div>
         </Modal>
       </div>

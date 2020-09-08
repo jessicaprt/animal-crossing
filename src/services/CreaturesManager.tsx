@@ -39,6 +39,8 @@ export class CreaturesManager extends Base {
         location: creature['availability']['location'],
         monthsAvailable_northern: this._getMonthArray(creature['availability']['month-array-northern']),
         monthsAvailable_southern: this._getMonthArray(creature['availability']['month-array-southern']),
+        monthsAvailable_northern_int: creature['availability']['month-array-northern'],
+        monthsAvailable_southern_int: creature['availability']['month-array-southern'],
         timeAvailable: creature['availability']['time-array'],
         timeString: creature['availability']['time'],
         iconUri: creature['icon_uri'],

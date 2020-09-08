@@ -99,7 +99,6 @@ export class HourlyMusic extends HourlyMusicManager {
     const _now = new Date();
     const _hour = _now.getHours() > 12 ? _now.getHours() - 12 : (_now.getHours() > 0 ? _now.getHours() : 12);
     const _meridiem = _now.getHours() >= 12 ? this.PM : this.AM;
-    console.log('time:', _hour, _meridiem);
     this._changeState('hourSelected', _hour);
     this._changeState('meridiemSelected', _meridiem);
     this.onTimeChanged();
@@ -176,9 +175,7 @@ export class HourlyMusic extends HourlyMusicManager {
     const _meridiemSelected: string = this.state.data.meridiemSelected;
     const _weatherSelected: string = this.state.data.weatherSelected;
     const _allHourlyMusic: IHourlyMusic[] = this.state.data.allHourlyMusic;
-
-    console.log('selection: ', _hourSelected, _meridiemSelected, _weatherSelected);
-    
+ 
     if (!_allHourlyMusic.length) {
       return;
     }
@@ -187,8 +184,6 @@ export class HourlyMusic extends HourlyMusicManager {
 
       const _currentTime = this.decodeTime(_hourSelected, _meridiemSelected);
       const _currentHourlyMusic: IHourlyMusic|undefined = _allHourlyMusic.find((h: IHourlyMusic) => h.hour === _currentTime);
-      
-      console.log('curr', _currentTime);
 
       if (_currentHourlyMusic) {
         const _currentWeatherMusicSelections: IWeatherMusic[] = _currentHourlyMusic.variations;

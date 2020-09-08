@@ -6,6 +6,8 @@ export interface ICreature {
   location: string;
   monthsAvailable_northern: string[];
   monthsAvailable_southern: string[];
+  monthsAvailable_northern_int: number[];
+  monthsAvailable_southern_int: number[];
   timeAvailable: number[];
   timeString: string;
   iconUri: string;

@@ -1,7 +1,8 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
 import { CreaturesManager } from '../../services/CreaturesManager';
-import { Container, Tabs, Tab, Button, Tooltip } from '@material-ui/core';
+import { Container, Tabs, Tab, Button } from '@material-ui/core';
 import { PageTitle } from '../shared/page-title/PageTitle';
 import { CreatureTab } from './CreatureTab';
 import { ICreature } from '../../models/ICreature';
@@ -62,7 +63,9 @@ export class Creatures extends CreaturesManager {
    * @param newValue 
    */
   handleTabChange(event:any, newValue:any): void {
-    this._changeState('activeTab', newValue);
+    if (this._isMounted) {
+      this._changeState('activeTab', newValue);
+    }
   }
    
   render() {
@@ -72,40 +75,37 @@ export class Creatures extends CreaturesManager {
           <div className="main-title-container">
             <PageTitle pageTitle="Creatures" backLink="/" backLinkDisplay="Home" />
             <div className="main-title-button-wrapper">
-            <Tooltip title="Feature will be available soon" aria-label="add">
-              <div>
-                <Button variant="contained" disabled>
-                  Availability Calendar
-                </Button>
-              </div>
-            </Tooltip>
+            <Link to="/creature/availability-calendar">
+              <Button variant="contained" disableElevation className="background-green">
+                Availability Calendar
+              </Button>
+            </Link>
             </div>
           </div>
 
           <div className="padded-2y creatures-container main-section">
-          <Tabs
-            value={this.state.data.activeTab}
-            onChange={this.handleTabChange}
-            indicatorColor="primary"
-            textColor="primary"
-            centered>
-            <Tab label="Fishes" />
-            <Tab label="Bugs" />
-            <Tab label="Sea Creatures" />
-          </Tabs>
+            <Tabs
+              value={this.state.data.activeTab}
+              onChange={this.handleTabChange}
+              indicatorColor="primary"
+              textColor="primary"
+              centered>
+              <Tab label="Fishes" />
+              <Tab label="Bugs" />
+              <Tab label="Sea Creatures" />
+            </Tabs>
 
-          <div className="creatures-section">
-            <div hidden={this.state.data.activeTab != 0}>
-              <CreatureTab fishes={this.state.data.allFishes} />
+            <div className="creatures-section">
+              <div hidden={this.state.data.activeTab != 0}>
+                <CreatureTab fishes={this.state.data.allFishes} />
+              </div>
+              <div hidden={this.state.data.activeTab != 1}>
+                <CreatureTab fishes={this.state.data.allBugs} />
+              </div>
+              <div hidden={this.state.data.activeTab != 2}>
+                <CreatureTab fishes={this.state.data.allSeaCreatures} />
+              </div>
             </div>
-            <div hidden={this.state.data.activeTab != 1}>
-              <CreatureTab fishes={this.state.data.allBugs} />
-            </div>
-            <div hidden={this.state.data.activeTab != 2}>
-              <CreatureTab fishes={this.state.data.allSeaCreatures} />
-            </div>
-          </div>
-
           </div>
         </Container>
       </div>
