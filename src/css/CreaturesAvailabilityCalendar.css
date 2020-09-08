@@ -47,7 +47,8 @@
 }
 
 .ac-month-name {
-  min-width: 300px;
+  min-width: 100px;
+  margin: 0 3px;
 }
 
 .ac-month-left,
