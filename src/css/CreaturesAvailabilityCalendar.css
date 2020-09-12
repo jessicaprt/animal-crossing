@@ -32,6 +32,7 @@
 .monthly-view-col,
 .yearly-view-col {
   border-right: 1px solid #fff;
+  text-align: center !important;
 }
 
 .monthly-view-col img {
