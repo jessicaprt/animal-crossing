@@ -1,3 +1,5 @@
-To run the project:
+# NookBook
+A one-stop information site for Animal Crossing: New Horizon.
 
-### `npm run start`
+## The site:
+[Go to the NookBook site](https://nookbook.prieto.ca)
